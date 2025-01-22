@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parth Patil | .NET Developer</title>
+    <!-- Three.js and GSAP for 3D animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <!-- Font Awesome and Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <!-- 3D Canvas Background -->
+    <canvas id="bg"></canvas>
+
+    <!-- Floating Tech Logos -->
+    <div class="floating-logos">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET Core" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="MSSQL" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="reveal-section">
+            <h1 class="glitch-text">Parth Patil</h1>
+            <div class="dynamic-text">
+                <h2 class="text-scramble">.NET Developer</h2>
+                <div class="typing-text"></div>
+            </div>
+            <div class="social-links reveal-stagger">
+                <a href="https://github.com/Parthpatil0024" target="_blank" aria-label="GitHub" class="bounce-hover"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/parth-patil1999/" target="_blank" aria-label="LinkedIn" class="bounce-hover"><i class="fab fa-linkedin"></i></a>
+                <a href="https://leetcode.com/u/parthpatil0024" target="_blank" aria-label="LeetCode" class="bounce-hover"><i class="fas fa-code"></i></a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="reveal-section">
+            <h2 class="section-title reveal-text">About Me</h2>
+            <div class="about-content">
+                <p class="highlight-text reveal-text">.NET Developer with 2+ years of experience proficient in C#, ASP.NET MVC, DotNet Core, Angular, and Web API. Skilled in database management using MSSQL and PostgreSQL, with expertise in ADO.NET, Entity Framework and Windows Services.</p>
+                <div class="tech-stack reveal-stagger">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">ASP.NET MVC</span>
+                    <span class="tech-tag">DotNet Core</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">MSSQL</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Entity Framework</span>
+                    <span class="tech-tag">TypeScript</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="reveal-section">
+            <h2 class="section-title reveal-text">Experience</h2>
+            <div class="timeline reveal-stagger">
+                <div class="experience-item">
+                    <h3 class="reveal-text">DotNet Developer</h3>
+                    <h4>Arya Omnitalk Wireless Solutions, Pune</h4>
+                    <p class="date">June 2022 - Present</p>
+                    <div class="experience-details">
+                        <div class="project">
+                            <h5>Cash Deposit System Enhancement</h5>
+                            <p>Enhanced AngularJS and .NET application for managing cash flow at toll plazas. Implemented new pages, customized RDLC reports, and developed efficient stored procedures.</p>
+                            <div class="tech-used">
+                                <span>AngularJS</span>
+                                <span>MVC</span>
+                                <span>ADO.net</span>
+                                <span>MSSQL</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h5>Consolidated Site Data Summary Solution</h5>
+                            <p>Developed a centralized system for consolidating data from multiple highway sites with real-time data aggregation and dashboard visualization.</p>
+                            <div class="tech-used">
+                                <span>DotNet Core</span>
+                                <span>ADO.net</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h5>Highway Device Management Solution (HDMS)</h5>
+                            <p>Built a comprehensive device monitoring application with RTSP streaming, live status monitoring, and interactive maps.</p>
+                            <div class="tech-used">
+                                <span>DotNet MVC</span>
+                                <span>Leaflet JS</span>
+                                <span>PostgreSQL</span>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="reveal-section">
+            <h2 class="section-title reveal-text">Technical Skills</h2>
+            <div class="skills-grid reveal-stagger">
+                <div class="skill-category">
+                    <h3 class="reveal-text">Core Technologies</h3>
+                    <ul>
+                        <li>C#</li>
+                        <li>ASP.NET MVC</li>
+                        <li>DotNet Core</li>
+                        <li>Windows Services</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="reveal-text">Web Technologies</h3>
+                    <ul>
+                        <li>Angular</li>
+                        <li>TypeScript</li>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS/Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="reveal-text">Database & Tools</h3>
+                    <ul>
+                        <li>MSSQL</li>
+                        <li>PostgreSQL</li>
+                        <li>Entity Framework</li>
+                        <li>ADO.NET</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="reveal-section">
+            <h2 class="section-title reveal-text">Personal Projects</h2>
+            <div class="projects-grid reveal-stagger">
+                <div class="project-card">
+                    <h3 class="reveal-text">Personal Finance Management API</h3>
+                    <p>RESTful API with JWT authentication, role-based access control, and comprehensive financial management features.</p>
+                    <div class="tech-used">
+                        <span>Go</span>
+                        <span>Gin</span>
+                        <span>JWT</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="reveal-text">Stopped Vehicle Detection System</h3>
+                    <p>Real-time system for detecting and tracking stopped vehicles using computer vision and machine learning.</p>
+                    <div class="tech-used">
+                        <span>Python</span>
+                        <span>OpenCV</span>
+                        <span>YOLOv8</span>
+                        <span>FilterPy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patents Section -->
+        <section id="patents" class="reveal-section">
+            <h2 class="section-title reveal-text">Patents</h2>
+            <div class="patents-grid reveal-stagger">
+                <div class="patent-card">
+                    <h3>RT-Sanitizer</h3>
+                    <p>Patent No: 201911038954</p>
+                    <p>CBR No: 31432</p>
+                </div>
+                <div class="patent-card">
+                    <h3>I-Adapter</h3>
+                    <p>Patent No: 201911040245</p>
+                    <p>CBR No: 32337</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="reveal-section">
+            <h2 class="section-title reveal-text">Education</h2>
+            <div class="education-grid reveal-stagger">
+                <div class="education-card">
+                    <h3>Post Graduate Diploma in Advanced Computing (PGDAC)</h3>
+                    <h4>CDAC - IACSD, Pune</h4>
+                    <p class="date">2021-2022</p>
+                </div>
+                <div class="education-card">
+                    <h3>Bachelor of Engineering (Computer Science)</h3>
+                    <h4>PVPIT, Pune</h4>
+                    <p class="date">2017-2021</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
