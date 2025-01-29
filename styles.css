@@ -897,6 +897,7 @@ section {
     transition: opacity 0.3s ease;
 }
 
+
  .project-image:hover::after {
     opacity: 1; /* Show "View More" on hover */
 }
