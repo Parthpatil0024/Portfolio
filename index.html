@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parth Patil | .NET Developer</title>
-    <!-- Three.js and GSAP for 3D animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    <!-- Font Awesome and Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parth Patil | .NET Developer</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets\logo.ico">
+        <!-- Three.js and GSAP for 3D animations -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+        <!-- jQuery (required for Lightbox) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Lightbox -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        <!-- Font Awesome and Google Fonts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    </head>
 <body class="dark-mode">
     <!-- 3D Canvas Background -->
     <canvas id="bg"></canvas>
@@ -107,6 +114,20 @@
                         <div class="project">
                             <h5>Highway Device Management Solution (HDMS)</h5>
                             <p>Built a comprehensive device monitoring application with RTSP streaming, live status monitoring, and interactive maps.</p>
+                            <div class="project-image">
+                                <!-- Thumbnail (only one image is shown) -->
+                                <a href="assets\gis-1.png" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)">
+                                    <img src="assets\gis-2.png" alt="HDMS Screenshot">
+                                </a>
+                                <!-- Hidden additional images for the Lightbox gallery -->
+                                <a href="assets\gis-2.png" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
+                                <a href="assets\cam-view.png" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
+                                <a href="assets\dashboard.png" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
+                                <a href="assets\modal.png" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
+                                <a href="assets\nms.png" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
+                                <a href="assets\vms.png" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>   
+
+                            </div>
                             <div class="tech-used">
                                 <span>DotNet MVC</span>
                                 <span>Leaflet JS</span>
@@ -170,6 +191,17 @@
                 <div class="project-card">
                     <h3 class="reveal-text">Stopped Vehicle Detection System</h3>
                     <p>Real-time system for detecting and tracking stopped vehicles using computer vision and machine learning.</p>
+                    <div class="project-image">
+                        <!-- Thumbnail (only one image is shown) -->
+                        <a href="assets\stopped1.png" data-lightbox="stopped-vehicle-project" data-title="Stopped Vehicle Detection System">
+                            <img src="assets\stopped2.png" alt="Stopped Vehicle  Screenshot">
+                        </a>
+                        <!-- Hidden additional images for the Lightbox gallery -->
+                        <a href="assets\stopped2.png" data-lightbox="stopped-vehicle-project" data-title="Stopped Vehicle Detection System" style="display: none;"></a>
+                        <a href="assets\paths.png" data-lightbox="stopped-vehicle-project" data-title="Stopped Vehicle Detection System" style="display: none;"></a>
+                        <a href="assets\paths2.png" data-lightbox="stopped-vehicle-project" data-title="Stopped Vehicle Detection System" style="display: none;"></a>
+
+                    </div>
                     <div class="tech-used">
                         <span>Python</span>
                         <span>OpenCV</span>
