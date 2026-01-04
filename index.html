@@ -4,17 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Parth Patil | .NET Developer</title>
+        <meta name="description" content="Parth Patil - .NET Developer with 3+ years of experience in C#, ASP.NET MVC, .NET Core, Angular, and AI/ML. Specializing in Computer Vision, Edge AI, and enterprise solutions.">
         <!-- Favicon -->
-        <link rel="icon" type="image/x-icon" href="assets\logo.ico">
+        <link rel="icon" type="image/x-icon" href="assets/logo.ico">
         <!-- Three.js and GSAP for 3D animations -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
         <!-- jQuery (required for Lightbox) -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- Lightbox -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
         <!-- Font Awesome and Google Fonts -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,6 +23,29 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
     </head>
 <body class="dark-mode">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-logo">PP</div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
     <!-- 3D Canvas Background -->
     <canvas id="bg"></canvas>
 
@@ -53,6 +77,9 @@
                 <a href="https://www.linkedin.com/in/parth-patil1999/" target="_blank" aria-label="LinkedIn" class="bounce-hover"><i class="fab fa-linkedin"></i></a>
                 <a href="https://leetcode.com/u/parthpatil0024" target="_blank" aria-label="LeetCode" class="bounce-hover"><i class="fas fa-code"></i></a>
             </div>
+            <a href="assets/resume.pdf" download class="resume-btn reveal-stagger">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
             <div class="scroll-indicator">
                 <div class="mouse">
                     <div class="wheel"></div>
@@ -69,16 +96,24 @@
         <section id="about" class="reveal-section">
             <h2 class="section-title reveal-text">About Me</h2>
             <div class="about-content">
-                <p class="highlight-text reveal-text">.NET Developer with 2+ years of experience proficient in C#, ASP.NET MVC, DotNet Core, Angular, and Web API. Skilled in database management using MSSQL and PostgreSQL, with expertise in ADO.NET, Entity Framework and Windows Services.</p>
+                <p class="highlight-text reveal-text">.NET Developer with 3+ years of experience proficient in C#, ASP.NET MVC, DotNet Core, Angular, and Web API. Skilled in database management using MSSQL and PostgreSQL, with expertise in ADO.NET, Entity Framework and Windows Services. Experienced in Python, Computer Vision, and Edge AI development.</p>
                 <div class="tech-stack reveal-stagger">
                     <span class="tech-tag">C#</span>
                     <span class="tech-tag">ASP.NET MVC</span>
-                    <span class="tech-tag">DotNet Core</span>
+                    <span class="tech-tag">.NET Core</span>
+                    <span class="tech-tag">Web API</span>
                     <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Python</span>
                     <span class="tech-tag">MSSQL</span>
                     <span class="tech-tag">PostgreSQL</span>
                     <span class="tech-tag">Entity Framework</span>
-                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">ADO.NET</span>
+                    <span class="tech-tag">Windows Services</span>
+                    <span class="tech-tag">YOLOv5</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">OpenVINO</span>
                 </div>
             </div>
         </section>
@@ -93,46 +128,64 @@
                     <p class="date">June 2022 - Present</p>
                     <div class="experience-details">
                         <div class="project">
-                            <h5>Cash Deposit System Enhancement</h5>
-                            <p>Enhanced AngularJS and .NET application for managing cash flow at toll plazas. Implemented new pages, customized RDLC reports, and developed efficient stored procedures.</p>
-                            <div class="tech-used">
-                                <span>AngularJS</span>
-                                <span>MVC</span>
-                                <span>ADO.net</span>
-                                <span>MSSQL</span>
-                            </div>
-                        </div>
-                        <div class="project">
-                            <h5>Consolidated Site Data Summary Solution</h5>
-                            <p>Developed a centralized system for consolidating data from multiple highway sites with real-time data aggregation and dashboard visualization.</p>
-                            <div class="tech-used">
-                                <span>DotNet Core</span>
-                                <span>ADO.net</span>
-                                <span>PostgreSQL</span>
-                            </div>
-                        </div>
-                        <div class="project">
-                            <h5>Highway Device Management Solution (HDMS)</h5>
-                            <p>Built a comprehensive device monitoring application with RTSP streaming, live status monitoring, and interactive maps.</p>
+                            <h5>NEXGEN - Highway Device Management Solution</h5>
+                            <ul class="project-points">
+                                <li>Developed centralized control room software integrating cameras, VMS, ATCC, ECB, and meteorological sensors with real-time monitoring</li>
+                                <li>Implemented modular Windows Services architecture with isolated failure domains and independent scaling</li>
+                                <li>Created unified dashboard with live telemetry visualization using Leaflet.js for immediate situational awareness</li>
+                            </ul>
                             <div class="project-image">
                                 <!-- Thumbnail (only one image is shown) -->
-                                <a href="assets\gis-1.jpg" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)">
-                                    <img src="assets\gis-2.jpg" alt="HDMS Screenshot">
+                                <a href="assets/gis-1.jpg" data-lightbox="hdms-project" data-title="NEXGEN - Highway Device Management Solution">
+                                    <img src="assets/gis-2.jpg" alt="NEXGEN Highway Device Management Solution dashboard showing GIS map with device locations and monitoring data">
                                 </a>
                                 <!-- Hidden additional images for the Lightbox gallery -->
-                                <a href="assets\gis-2.jpg" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
-                                <a href="assets\cam-view.jpg" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
-                                <a href="assets\dashboard.jpg" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
-                                <a href="assets\modal.jpg" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
-                                <a href="assets\nms.jpg" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>
-                                <a href="assets\vms.jpg" data-lightbox="hdms-project" data-title="Highway Device Management Solution (HDMS)" style="display: none;"></a>   
-
+                                <a href="assets/gis-2.jpg" data-lightbox="hdms-project" data-title="NEXGEN - Highway Device Management Solution" style="display: none;"></a>
+                                <a href="assets/cam-view.jpg" data-lightbox="hdms-project" data-title="NEXGEN - Highway Device Management Solution" style="display: none;"></a>
+                                <a href="assets/dashboard.jpg" data-lightbox="hdms-project" data-title="NEXGEN - Highway Device Management Solution" style="display: none;"></a>
+                                <a href="assets/modal.jpg" data-lightbox="hdms-project" data-title="NEXGEN - Highway Device Management Solution" style="display: none;"></a>
+                                <a href="assets/nms.jpg" data-lightbox="hdms-project" data-title="NEXGEN - Highway Device Management Solution" style="display: none;"></a>
+                                <a href="assets/vms.jpg" data-lightbox="hdms-project" data-title="NEXGEN - Highway Device Management Solution" style="display: none;"></a>
                             </div>
                             <div class="tech-used">
-                                <span>DotNet MVC</span>
-                                <span>Leaflet JS</span>
+                                <span>.NET Core MVC</span>
+                                <span>Web API</span>
                                 <span>PostgreSQL</span>
-                                <span>Bootstrap</span>
+                                <span>Angular</span>
+                                <span>Leaflet.js</span>
+                                <span>Windows Services</span>
+                                <span>ADO.NET</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h5>ANPR Multi-Lane Monitoring Dashboard</h5>
+                            <ul class="project-points">
+                                <li>Architected three-tier monitoring system (LPU → Plaza → Central Server) for multi-lane ANPR deployment across toll plazas</li>
+                                <li>Developed heartbeat monitoring with automatic alarm generation/resolution, reducing manual monitoring by 70%</li>
+                                <li>Built plaza-level Windows Service with fallback mechanisms and device health monitoring with component-specific alarms</li>
+                                <li>Created in-memory state store with polling-based updates for real-time UI across 150+ concurrent lanes</li>
+                            </ul>
+                            <div class="tech-used">
+                                <span>.NET Core MVC</span>
+                                <span>Web API</span>
+                                <span>Windows Services</span>
+                                <span>PostgreSQL</span>
+                                <span>JavaScript</span>
+                                <span>Multi-tier Architecture</span>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <h5>Cash Deposit System Enhancement</h5>
+                            <ul class="project-points">
+                                <li>Enhanced cash flow management system for toll plaza operations with performance optimizations</li>
+                                <li>Optimized database through stored procedures, improving cash reconciliation response times by 40%</li>
+                            </ul>
+                            <div class="tech-used">
+                                <span>ASP.NET MVC</span>
+                                <span>AngularJS</span>
+                                <span>MSSQL</span>
+                                <span>RDLC Reports</span>
+                                <span>Stored Procedures</span>
                             </div>
                         </div>
                     </div>
@@ -145,68 +198,131 @@
             <h2 class="section-title reveal-text">Technical Skills</h2>
             <div class="skills-grid reveal-stagger">
                 <div class="skill-category">
-                    <h3 class="reveal-text">Core Technologies</h3>
+                    <h3 class="reveal-text">Backend Development</h3>
                     <ul>
                         <li>C#</li>
                         <li>ASP.NET MVC</li>
-                        <li>DotNet Core</li>
+                        <li>.NET Core</li>
+                        <li>Web API</li>
                         <li>Windows Services</li>
+                        <li>Entity Framework</li>
+                        <li>ADO.NET</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3 class="reveal-text">Web Technologies</h3>
+                    <h3 class="reveal-text">Frontend Development</h3>
                     <ul>
                         <li>Angular</li>
                         <li>TypeScript</li>
                         <li>JavaScript</li>
-                        <li>HTML/CSS/Bootstrap</li>
+                        <li>HTML5/CSS3</li>
+                        <li>Bootstrap</li>
+                        <li>Leaflet.js</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3 class="reveal-text">Database & Tools</h3>
+                    <h3 class="reveal-text">Database & Storage</h3>
                     <ul>
-                        <li>MSSQL</li>
+                        <li>Microsoft SQL Server</li>
                         <li>PostgreSQL</li>
-                        <li>Entity Framework</li>
-                        <li>ADO.NET</li>
+                        <li>Stored Procedures</li>
+                        <li>Database Optimization</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3 class="reveal-text">AI/ML & Computer Vision</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>YOLOv5/YOLOv8</li>
+                        <li>OpenCV</li>
+                        <li>OpenVINO/NCNN</li>
+                        <li>PaddleOCR</li>
+                        <li>FAISS</li>
+                        <li>ByteTrack</li>
+                        <li>Scikit-learn</li>
+                        <li>Flask</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- AI/ML Projects Section -->
         <section id="projects" class="reveal-section">
-            <h2 class="section-title reveal-text">Personal Projects</h2>
+            <h2 class="section-title reveal-text">AI/ML Projects</h2>
             <div class="projects-grid reveal-stagger">
                 <div class="project-card">
-                    <h3 class="reveal-text">Personal Finance Management API</h3>
-                    <p>RESTful API with JWT authentication, role-based access control, and comprehensive financial management features.</p>
+                    <h3 class="reveal-text">Edge-Based ANPR System with Real-Time Processing</h3>
+                    <ul class="project-points">
+                        <li>Developed lightweight ANPR system optimized for edge deployment on Raspberry Pi 5, processing real-time RTSP streams with 95% accuracy on Indian license plates</li>
+                        <li>Implemented hybrid CV pipeline combining YOLO for detection and PaddleOCR for character recognition, achieving 15 FPS real-time performance</li>
+                        <li>Fine-tuned YOLO models on custom dataset of 5,000+ diverse images for localized font variations and lighting conditions</li>
+                        <li>Optimized inference using NCNN framework with model quantization, reducing model size by 70%</li>
+                        <li>Built Flask REST API with PostgreSQL integration, implementing confidence-based filtering reducing false positives by 85%</li>
+                    </ul>
                     <div class="tech-used">
-                        <span>Go</span>
-                        <span>Gin</span>
-                        <span>JWT</span>
+                        <span>Python</span>
+                        <span>YOLO</span>
+                        <span>PaddleOCR</span>
+                        <span>NCNN</span>
+                        <span>Flask</span>
+                        <span>PostgreSQL</span>
+                        <span>OpenCV</span>
+                        <span>Raspberry Pi 5</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="reveal-text">Vehicle Re-Identification System for Transaction Matching</h3>
+                    <ul class="project-points">
+                        <li>Designed Vehicle Re-ID system using OSNet IBN 1.0x for matching entry-exit transactions where ANPR fails</li>
+                        <li>Built end-to-end pipeline: image processing → vehicle crop extraction → 512-dimensional embeddings → 8-hour window search</li>
+                        <li>Implemented FAISS-based similarity search with IndexFlatL2 for efficient nearest neighbor retrieval</li>
+                        <li>Developed intelligent re-ranking algorithm combining visual similarity with metadata features, improving accuracy by 15%</li>
+                        <li>Reduced manual verification workload by 80%, processing 1000+ daily transactions with 92% matching accuracy</li>
+                    </ul>
+                    <div class="tech-used">
+                        <span>Python</span>
+                        <span>OSNet</span>
+                        <span>FAISS</span>
+                        <span>Deep Learning</span>
+                        <span>Computer Vision</span>
                         <span>PostgreSQL</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3 class="reveal-text">Stopped Vehicle Detection System</h3>
-                    <p>Real-time system for detecting and tracking stopped vehicles using computer vision and machine learning.</p>
-                    <div class="project-image">
-                        <!-- Thumbnail (only one image is shown) -->
-                        <a href="assets\stopped1.jpg" data-lightbox="stopped-vehicle-project" data-title="Stopped Vehicle Detection System">
-                            <img src="assets\stopped2.jpg" alt="Stopped Vehicle  Screenshot">
-                        </a>
-                        <!-- Hidden additional images for the Lightbox gallery -->
-                        <a href="assets\stopped2.jpg" data-lightbox="stopped-vehicle-project" data-title="Stopped Vehicle Detection System" style="display: none;"></a>
-                        <a href="assets\paths.jpg" data-lightbox="stopped-vehicle-project" data-title="Stopped Vehicle Detection System" style="display: none;"></a>
-                        <a href="assets\paths2.jpg" data-lightbox="stopped-vehicle-project" data-title="Stopped Vehicle Detection System" style="display: none;"></a>
-
-                    </div>
+                    <h3 class="reveal-text">Real-Time Vehicle Incident Detection System</h3>
+                    <ul class="project-points">
+                        <li>Developed automated incident detection for highway surveillance using YOLOv8 to identify accidents, wrong-way driving, and violations</li>
+                        <li>Implemented multi-object tracking using ByteTrack to maintain vehicle identities and detect anomalous behavior patterns</li>
+                        <li>Created rule-based alert system analyzing trajectories, speeds, and positions, reducing incident response time by 40%</li>
+                        <li>Optimized pipeline to process 4 concurrent camera streams at 20+ FPS with alert latency under 2 seconds</li>
+                        <li>Integrated PostgreSQL for incident logging and REST API endpoints for control room dashboard</li>
+                    </ul>
                     <div class="tech-used">
                         <span>Python</span>
-                        <span>OpenCV</span>
                         <span>YOLOv8</span>
-                        <span>FilterPy</span>
+                        <span>ByteTrack</span>
+                        <span>OpenCV</span>
+                        <span>Flask</span>
+                        <span>PostgreSQL</span>
+                        <span>RTSP</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="reveal-text">Book Recommendation System using Collaborative Filtering</h3>
+                    <ul class="project-points">
+                        <li>Built content-based and collaborative filtering recommendation system using 270,000+ book ratings from Goodreads</li>
+                        <li>Implemented popularity-based ranking and user-based collaborative filtering using cosine similarity</li>
+                        <li>Developed Flask web application with responsive UI for book search and personalized recommendations</li>
+                        <li>Performed extensive EDA and feature engineering on metadata, ratings distribution, and user behavior patterns</li>
+                        <li>Achieved recommendation precision of 78% on test set</li>
+                    </ul>
+                    <div class="tech-used">
+                        <span>Python</span>
+                        <span>Scikit-learn</span>
+                        <span>Pandas</span>
+                        <span>Flask</span>
+                        <span>Collaborative Filtering</span>
+                        <span>Content-Based Filtering</span>
                     </div>
                 </div>
             </div>
@@ -232,21 +348,64 @@
         <!-- Education Section -->
         <section id="education" class="reveal-section">
             <h2 class="section-title reveal-text">Education</h2>
-            <div class="education-grid reveal-stagger">
+            <div class="education-timeline reveal-stagger">
                 <div class="education-card">
-                    <h3>Post Graduate Diploma in Advanced Computing (PGDAC)</h3>
-                    <h4>CDAC - IACSD, Pune</h4>
-                    <p class="date">2021-2022</p>
+                    <div class="education-year">Expected 2026</div>
+                    <h3>Master of Technology (MTech) - Applied Artificial Intelligence</h3>
+                    <h4>Visvesvaraya National Institute of Technology, Nagpur</h4>
                 </div>
                 <div class="education-card">
-                    <h3>Bachelor of Engineering (Computer Science)</h3>
+                    <div class="education-year">2022</div>
+                    <h3>Post Graduate Diploma in Advanced Computing (PG-DAC)</h3>
+                    <h4>CDAC, Pune</h4>
+                    <p class="cgpa">CGPA: 7.5/10</p>
+                </div>
+                <div class="education-card">
+                    <div class="education-year">2021</div>
+                    <h3>Bachelor of Engineering (B.E.) - Computer Science</h3>
                     <h4>PVPIT, Pune</h4>
-                    <p class="date">2017-2021</p>
+                    <p class="cgpa">CGPA: 7.44/10</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="reveal-section">
+            <h2 class="section-title reveal-text">Certifications</h2>
+            <div class="certifications-grid reveal-stagger">
+                <a href="https://learn.microsoft.com/api/credentials/share/en-us/ParthPatil-4071/D2DC40631238BFD?sharingId=2D30BF5EE74C31D5" target="blank" class="certification-card">
+                    <div class="certification-badge">
+                        <img src="assets/microsoft-certified-fundamentals-badge.svg" alt="Microsoft Azure Fundamentals Badge">
+                    </div>
+                    <h3>Azure Fundamentals</h3>
+                    <p class="certification-issuer">Microsoft</p>
+                    <p class="certification-date">2026</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="reveal-section">
+            <h2 class="section-title reveal-text">Get In Touch</h2>
+            <div class="contact-content reveal-stagger">
+                <p class="contact-text">I'm currently open to new opportunities and collaborations. Feel free to reach out!</p>
+                <a href="mailto:parthpatil0024@gmail.com" class="contact-email">
+                    <i class="fas fa-envelope"></i> parthpatil0024@gmail.com
+                </a>
+                <div class="contact-social">
+                    <a href="https://github.com/Parthpatil0024" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/parth-patil1999/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/parthpatil0024" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Parth Patil. All rights reserved.</p>
+    </footer>
+
+    <script defer src="script.js"></script>
 </body>
 </html>
