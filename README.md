@@ -1,33 +1,44 @@
-# Portfolio Website
+# Parth Patil · Portfolio
 
-A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Features a dynamic 3D background, floating tech logos, and smooth animations.
+A personal portfolio website with an organic, editorial aesthetic — built with vanilla HTML, CSS, and JavaScript. No frameworks, no build step.
 
 ## Features
 
-- Interactive 3D particle background using Three.js
-- Floating technology logos with mouse interaction
-- Text scramble animation effect
-- Smooth scroll animations using GSAP
-- Responsive design for all devices
-- Dark mode theme
-- Section-wise reveal animations
+- Organic Three.js particle field with mouse parallax and ambient light bloom
+- Custom amber cursor with lagging ring follow effect
+- Scroll-triggered reveal animations via IntersectionObserver
+- 3D CSS tilt on skill and project cards
+- Cormorant Garamond + JetBrains Mono typography pairing
+- Deep forest green + amber + cream color palette
+- Grain texture overlay for depth
+- Fully self-contained — single HTML file with inline CSS and JS
 
-## Technologies Used
+## Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- Three.js - For 3D background
-- GSAP - For animations
-- Font Awesome - For icons
-- Google Fonts - Space Grotesk
+- HTML5 / CSS3 / Vanilla JavaScript
+- [Three.js r128](https://threejs.org/) — 3D particle background
+- [GSAP 3](https://gsap.com/) — smooth scroll and animation utilities
+- [Font Awesome 6](https://fontawesome.com/) — icons
+- [Google Fonts](https://fonts.google.com/) — Cormorant Garamond, JetBrains Mono
+
+## Project Structure
+
+```
+portfolio/
+├── index.html       ← entire site (HTML + CSS + JS in one file)
+└── assets/
+    ├── resume.pdf
+    ├── logo.ico
+    ├── microsoft-certified-fundamentals-badge.svg
+    └── *.jpg        ← project screenshots
+```
 
 ## Setup
 
 1. Clone the repository
-2. Open `index.html` in your browser
-3. No build process required - it's pure HTML, CSS, and JavaScript
+2. Place your files in the `assets/` folder
+3. Open `index.html` in any browser — no build process required
 
 ## License
 
-MIT License 
+MIT
