@@ -1,0 +1,93 @@
+# Parth Patil — Engineering Architecture Dossier & Technical Portfolio
+
+> Complete technical documentation of production systems, architecture patterns, and engineering contributions for Parth Patil.
+> Official Website: https://parthpatil0024.github.io/
+> Primary Role: Software Engineer at Arya Omnitalk Wireless Solutions Pvt. Ltd. (Pune, India · 2022 – Present · 4+ Years)
+
+---
+
+## 1. Professional Overview & Identity
+
+- **Engineer**: Parth Patil
+- **Core Stacks**: C# / .NET 8, ASP.NET Core MVC & Web API, Distributed Windows Services, SignalR WebSockets, PostgreSQL 16, Python 3.11, PyTorch, YOLOv8, PaddleOCR, OSNet, FAISS Vector Search, MediaMTX, WebRTC (WHEP), ONVIF Protocol, Linux / Raspberry Pi 5.
+- **Current Employer**: Arya Omnitalk Wireless Solutions Pvt. Ltd. (Highway Automation, Smart Transit & Intelligent Transportation Systems).
+- **Postgraduate Degree**: M.Tech in Applied Artificial Intelligence — Visvesvaraya National Institute of Technology (VNIT), Nagpur (Completed).
+- **Certifications**: Microsoft Certified: Azure Fundamentals (AZ-900), CDAC PG-DAC (7.5 CGPA).
+- **Verified Links**:
+  - Portfolio: https://parthpatil0024.github.io/
+  - GitHub: https://github.com/Parthpatil0024
+  - LinkedIn: https://www.linkedin.com/in/parth-patil1999/
+  - Hugging Face Live Demo: https://huggingface.co/spaces/parthpatil0024/ANPR
+  - LeetCode: https://leetcode.com/u/parthpatil0024
+
+---
+
+## 2. Production Performance Benchmarks & Measurement Context
+
+- **< 5ms Core Dynamic Tariff Latency**:
+  - *Measurement Context*: Measured as the end-to-end evaluation time from vehicle entry event through in-memory fee lookup, concession matrices, and tax calculation under live toll lane transaction load.
+- **Sub-200ms WebRTC Video Streaming Latency**:
+  - *Measurement Context*: Measured glass-to-glass latency from IP camera H.264/H.265 RTSP streams ingested into MediaMTX and served via WebRTC (WHEP) into operator web consoles with ONVIF PTZ control.
+- **150+ Monitored Highway Lane Devices**:
+  - *Measurement Context*: Active production scale across multiple national highway toll plazas in India, capturing real-time device health heartbeats (barrier status, loop detectors, IP cameras, thermal printers) via distributed SignalR WebSockets.
+- **99.9% System Availability & SLA**:
+  - *Measurement Context*: Maintained via fault-tolerant Windows Services with local SQLite/JSON transactional disk caching for seamless offline lane operations during central network outages.
+
+---
+
+## 3. Deep-Dive System Architectures & Case Studies
+
+### 1. ParkAOT (ParkOS) — Smart Parking & POS Automation
+- **Domain**: Automated Parking Infrastructure, POS Automation, Dynamic Pricing.
+- **Tech Stack**: ASP.NET Core 8 MVC, C#, PostgreSQL 16, SignalR WebSockets, FastReport .NET, Python YOLOv8 / PaddleOCR, Device Service APIs.
+- **Architecture**:
+  - *Frontend & Operator UI*: High-speed entry/exit point-of-sale console with live camera stream preview and automatic plate OCR lookup.
+  - *Dynamic Tariff Engine*: Evaluates multi-tier duration, vehicle category (2W/4W/Commercial), and peak-hour pricing in <5ms.
+  - *Device Service Orchestration*: Communicates with internal device microservices to trigger boom barrier operations, request 80mm thermal receipt printing for QR barcode slips, drive LED User Fare Displays, and stream live camera feeds.
+  - *Financial Reconciliation*: Role-based shift management with automated FastReport MIS revenue audits.
+
+### 2. ANPR Multi-Lane Central Monitoring & Plaza Telemetry
+- **Domain**: Central Highway Toll Command & Real-Time Device Health Monitoring.
+- **Tech Stack**: ASP.NET Core Web API, PostgreSQL, SignalR, Leaflet.js, Windows Services.
+- **Architecture**:
+  - *3-Tier Distributed Topology*: Lane Processing Unit (LPU) &rarr; Toll Plaza Local Server &rarr; Central Command HQ.
+  - *Telemetry Stream*: Ingests high-frequency vehicle transaction payloads and device health heartbeats across 150+ monitored lanes.
+  - *Corridor GIS Map*: Visualizes plaza connectivity, lane status alarms, and real-time transit throughput using Leaflet.js and live WebSockets.
+
+### 3. Vehicle Re-Identification & Visual Search Engine
+- **Domain**: Computer Vision, Deep Metric Learning, Cross-Camera Tracking.
+- **Tech Stack**: Python 3.11, PyTorch, OSNet, FAISS (Facebook AI Similarity Search), OpenCV, FastAPI.
+- **Architecture**:
+  - *Feature Extraction*: Generates 512-dimensional L2-normalized embeddings from vehicle crops using an OSNet backbone fine-tuned for high-speed highway camera angles.
+  - *Vector Search*: Utilizes FAISS index for sub-15ms similarity search across historical captures to match vehicles even during license plate occlusion or tampering.
+  - *Windshield ROI Analysis*: Performs MSER blob detection on windshield zones (FASTag stickers, emblems, tinting) for fine-grained secondary validation.
+
+### 4. NEXTGEN Consolidated Highway ATMS
+- **Domain**: Advanced Traffic Management Systems (ATMS) & Roadway Safety.
+- **Tech Stack**: C#, .NET Core / .NET Framework, PostgreSQL, Windows Services, Leaflet GIS, RDLC Reporting.
+- **Architecture**:
+  - *Service-Oriented Architecture (SOA)*: Unifies disparate roadside subsystems including Variable Message Signs (VMS), Automatic Traffic Counters (ATCC), Emergency Call Boxes (ECB), Meteorological Weather Stations, and CCTV cameras.
+  - *Background Ingestion*: Fault-tolerant Windows Services poll and parse sensor telemetry, persisting standardized events to PostgreSQL and pushing critical safety alarms.
+
+### 5. Video Management System (VMS) & Multi-Camera PTZ Engine
+- **Domain**: IP Surveillance, Low-Latency Video Streaming, Camera Control.
+- **Tech Stack**: C#, ASP.NET Core, MediaMTX, WebRTC (WHEP), ONVIF Protocol, RTSP.
+- **Architecture**:
+  - *Device Discovery & Management*: Direct ONVIF integration implementing WS-Discovery, media profiles, PTZ continuous/absolute positioning, and preset patrol loops.
+  - *Low-Latency Streaming*: MediaMTX streaming pipeline converting RTSP streams into sub-200ms WebRTC feeds for responsive operator camera steering without buffer lag.
+  - *Synchronized Timeline Playback*: Multi-channel synchronized timeline scrubber for incident investigations.
+
+### 6. Edge-Based ANPR & Automatic Traffic Classifier (ATCC)
+- **Domain**: Embedded Edge AI, Real-Time Traffic Classification.
+- **Tech Stack**: Python 3.11, YOLOv8, PaddleOCR (Fine-Tuned), NCNN, OpenVINO, ByteTrack, Raspberry Pi 5.
+- **Architecture**:
+  - *Edge Execution*: Quantized YOLO + PaddleOCR running locally on Raspberry Pi 5 at 15+ FPS.
+  - *Plate Specialization*: Custom character dictionaries trained on 5,000+ Indian vehicle plates (98% character accuracy).
+  - *Live Demo*: Deployed on Hugging Face Spaces (https://huggingface.co/spaces/parthpatil0024/ANPR).
+
+### 7. ATMS Progressive Web App & Mobile Diagnostic Console
+- **Domain**: Mobile Field Operations & Roadside Maintenance.
+- **Tech Stack**: PWA, JavaScript ES6+, Service Workers, Bootstrap 5, .NET Core Web API, PostgreSQL.
+- **Architecture**:
+  - *Technician Field Console*: Mobile UI for inspecting lane device heartbeats and reviewing live camera snapshots.
+  - *Offline Caching*: Service Worker caching for device manuals and audit logging in zero-connectivity highway stretches.

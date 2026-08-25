@@ -1,6 +1,6 @@
 # Parth Patil · Software Engineer Portfolio
 
-Personal portfolio showcasing backend software engineering, real-time IoT hardware integrations, and edge computer vision pipelines built across 4+ years of production experience. Built with clean, vanilla HTML5, CSS3, and JavaScript — fast, responsive, and self-contained with zero build steps required.
+Personal portfolio showcasing backend software engineering, ONVIF & WebRTC low-latency video streaming, and edge computer vision pipelines built across 4+ years of production experience. Built with clean, vanilla HTML5, CSS3, and JavaScript — fast, responsive, and self-contained with zero build steps required.
 
 ## 🚀 Key Features
 
@@ -8,7 +8,7 @@ Personal portfolio showcasing backend software engineering, real-time IoT hardwa
 - **Recruiter Dual-Track Switcher**: Instant filtering between `.NET & Distributed Systems` and `Python, Edge AI & Computer Vision`.
 - **Targeted Resume Hub**: 1-click downloads for role-tailored resumes (`Parth_Patil_Resume_DotNet.docx` and `Parth_Patil_Resume_Python.docx`).
 - **Production Case Studies with Real Screenshots**:
-  - **ParkAOT (ParkOS)**: Enterprise Smart Parking Management & Edge Hardware POS (.NET 8 + SignalR + PostgreSQL + FastReport + Python ANPR).
+  - **ParkAOT (ParkOS)**: Enterprise Smart Parking Management & POS Automation (.NET 8 + SignalR + PostgreSQL + FastReport + Python ANPR + Device Service APIs).
   - **ANPR Multi-Lane Central Monitoring**: 3-tier distributed telemetry command (LPU &rarr; Plaza &rarr; Central) across 150+ toll lanes.
   - **Vehicle Re-ID & Visual Search**: Deep Metric Learning with OSNet & FAISS 512-dim Vector Search.
   - **NEXTGEN Consolidated Highway ATMS**: Enterprise Service-Oriented Architecture (SOA) unifying all standard highway ATMS devices (VMS, ATCC, ECB, Meteorological Sensors, CCTV) via Windows Services data ingestion, live status monitoring, and RDLC reporting.
@@ -19,7 +19,9 @@ Personal portfolio showcasing backend software engineering, real-time IoT hardwa
 - **FormSubmit.co Contact Backend**: AJAX-powered contact form with live validation, spam honeypot, and instant toast confirmation.
 - **Quantified Impact Benchmarks**: 4+ years experience, 150+ monitored lanes, <5ms core processing latency, 99.9% system SLA.
 - **Education & Credentials**: M.Tech in Applied AI (VNIT Nagpur - Completed), CDAC PG-DAC, and Microsoft Certified Azure Fundamentals (AZ-900).
-- **Edge-to-Central System Architecture Flow**: Visual interactive pipeline from IoT sensors to .NET Core and PostgreSQL.
+- **SEO & AI Search Discovery**: Complete search engine suite with `robots.txt`, XML `sitemap.xml`, `llms.txt`, and comprehensive `llms-full.txt` dossier.
+- **Structured Data & Knowledge Graph**: Graph JSON-LD (`Person` + `FAQPage` schema) for search engines.
+- **Engineering FAQ**: Semantic question-answer block addressing recruiter queries on stack, scale, latency measurements, and credentials.
 - **Modern Industrial Matte Aesthetics**: Google Fonts (`Sora`, `Inter`, `JetBrains Mono`), dark titanium surfaces, and smooth interactions.
 
 ## 📁 Directory Structure
@@ -28,6 +30,10 @@ Personal portfolio showcasing backend software engineering, real-time IoT hardwa
 portfolio/
 ├── index.html                                 ← Entire web application (HTML + CSS + JS)
 ├── README.md                                  ← Project documentation
+├── robots.txt                                 ← Crawler & AI agent permissions
+├── sitemap.xml                                ← Google Search Console XML sitemap
+├── llms.txt                                   ← LLM / AI Search index
+├── llms-full.txt                              ← Complete AI engineering architecture dossier
 └── assets/
     ├── Parth_Patil_Resume_DotNet.docx         ← .NET / C# Enterprise Resume
     ├── Parth_Patil_Resume_Python.docx         ← Python / AI / Computer Vision Resume
