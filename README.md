@@ -4,6 +4,7 @@ Personal portfolio showcasing backend software engineering, real-time IoT hardwa
 
 ## 🚀 Key Features
 
+- **Unified Experience Anchor**: Professional employment context at **Arya Omnitalk Wireless Solutions Pvt. Ltd.** (2022 – Present · 4+ Years), anchoring the 7 enterprise case studies.
 - **Recruiter Dual-Track Switcher**: Instant filtering between `.NET & Distributed Systems` and `Python, Edge AI & Computer Vision`.
 - **Targeted Resume Hub**: 1-click downloads for role-tailored resumes (`Parth_Patil_Resume_DotNet.docx` and `Parth_Patil_Resume_Python.docx`).
 - **Production Case Studies with Real Screenshots**:
@@ -16,10 +17,10 @@ Personal portfolio showcasing backend software engineering, real-time IoT hardwa
   - **ATMS PWA**: Mobile-first field operations & device diagnostic suite.
 - **Interactive Lightbox Modal**: High-resolution image inspection with keyboard arrow navigation (`←`, `→`, `ESC`).
 - **FormSubmit.co Contact Backend**: AJAX-powered contact form with live validation, spam honeypot, and instant toast confirmation.
-- **Quantified Impact KPI Strip**: 4+ years experience, 150+ monitored lanes, 98%+ ANPR precision, 2 registered patents.
-- **Education & Credentials**: M.Tech in Applied AI (VNIT Nagpur - Completed), CDAC PG-DAC, and Microsoft Azure Certified.
+- **Quantified Impact Benchmarks**: 4+ years experience, 150+ monitored lanes, <5ms core processing latency, 99.9% system SLA.
+- **Education & Credentials**: M.Tech in Applied AI (VNIT Nagpur - Completed), CDAC PG-DAC, and Microsoft Certified Azure Fundamentals (AZ-900).
 - **Edge-to-Central System Architecture Flow**: Visual interactive pipeline from IoT sensors to .NET Core and PostgreSQL.
-- **Modern Titanium & Emerald Aesthetics**: Google Fonts (`Space Grotesk`, `Plus Jakarta Sans`, `JetBrains Mono`), Three.js particle canvas, smooth scroll, and custom glowing cursor.
+- **Modern Industrial Matte Aesthetics**: Google Fonts (`Sora`, `Inter`, `JetBrains Mono`), dark titanium surfaces, and smooth interactions.
 
 ## 📁 Directory Structure
 
