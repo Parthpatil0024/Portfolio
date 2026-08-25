@@ -1,0 +1,77 @@
+# Parth Patil — Software Engineer (.NET Backends & Edge Computer Vision)
+
+> Personal portfolio, system architecture documentation, and engineering case studies for Parth Patil.
+> Official Website: https://parthpatil0024.github.io/
+
+## Summary
+
+- **Name**: Parth Patil
+- **Role**: Software Engineer
+- **Current Organization**: Arya Omnitalk Wireless Solutions Pvt. Ltd. (2022 – Present · 4+ Years)
+- **Location**: Pune, Maharashtra, India
+- **Email**: parthpatil0024@gmail.com
+- **Specializations**: C# / .NET 8 Core Backends, Distributed Windows Services, Hardware IoT / POS Integrations, SignalR WebSockets, Embedded Edge Computer Vision (YOLOv8, PaddleOCR, OSNet, FAISS), Low-Latency Video Streaming (WebRTC / RTSP / ONVIF).
+
+## Core Production Metrics
+
+- **Experience**: 4+ years architecting and shipping mission-critical highway, toll automation, and smart transit infrastructure.
+- **Monitored Hardware**: 150+ live highway toll lanes monitored with real-time heartbeat telemetry across India.
+- **Core Processing Latency**: < 5ms dynamic tariff evaluation and hardware trigger execution.
+- **Video Latency**: Sub-200ms WebRTC (WHEP) and RTSP live IP camera streams with ONVIF PTZ control.
+- **System SLA**: 99.9% uptime with offline-first disk synchronization and fault-tolerant background services.
+
+## Education & Certifications
+
+- **M.Tech in Applied Artificial Intelligence** — Visvesvaraya National Institute of Technology (VNIT), Nagpur (Post Graduate · Completed).
+- **PG-DAC (Post Graduate Diploma in Advanced Computing)** — Centre for Development of Advanced Computing (CDAC), Pune (CGPA: 7.5 / 10).
+- **B.E. in Computer Science & Engineering** — PVPIT, Pune (CGPA: 7.44 / 10).
+- **Microsoft Certified**: Azure Fundamentals (AZ-900). Verification: https://learn.microsoft.com/api/credentials/share/en-us/ParthPatil-4071/D2DC40631238BFD?sharingId=2D30BF5EE74C31D5
+
+## Verified External Links
+
+- **Portfolio**: https://parthpatil0024.github.io/
+- **GitHub**: https://github.com/Parthpatil0024
+- **LinkedIn**: https://www.linkedin.com/in/parth-patil1999/
+- **Hugging Face (Live ANPR Demo)**: https://huggingface.co/spaces/parthpatil0024/ANPR
+- **LeetCode**: https://leetcode.com/u/parthpatil0024
+
+---
+
+## Production Systems & Case Studies
+
+### 1. ParkAOT (ParkOS) — Enterprise Smart Parking & Edge POS
+- **Tech Stack**: ASP.NET Core 8 MVC, C#, PostgreSQL 16, SignalR WebSockets, FastReport .NET, Python YOLOv8 / PaddleOCR, ESC/POS Serial.
+- **Architecture**: Lane-level POS terminal automating barrier gate relays, thermal receipt printing, user fare displays, and dynamic tariff evaluation (<5ms). Integrated with live SignalR hardware health dashboards and edge ANPR.
+
+### 2. ANPR Multi-Lane Central Monitoring & Plaza Telemetry
+- **Tech Stack**: ASP.NET Core Web API, PostgreSQL, SignalR, Leaflet.js, Windows Services.
+- **Architecture**: 3-tier distributed monitoring topology (Lane Processing Unit &rarr; Toll Plaza Server &rarr; Central Command HQ) collecting real-time transaction logs and hardware heartbeats across 150+ live toll lanes.
+
+### 3. Vehicle Re-ID & Visual Search Engine
+- **Tech Stack**: Python 3.11, PyTorch, OSNet, FAISS (Facebook AI Similarity Search), OpenCV, FastAPI.
+- **Architecture**: Deep metric learning pipeline generating 512-dimensional vehicle embeddings. Utilizes FAISS index for sub-15ms vector retrieval across multi-camera highway corridors even during license plate occlusion.
+
+### 4. NEXTGEN Consolidated Highway ATMS
+- **Tech Stack**: C#, .NET Framework / .NET Core, PostgreSQL, Windows Services, Leaflet GIS, RDLC Reporting.
+- **Architecture**: Service-Oriented Architecture (SOA) unifying roadside ITS subsystems: Variable Message Signs (VMS), Automatic Traffic Classifiers (ATCC), Emergency Call Boxes (ECB), Meteorological Weather Sensors, and PTZ CCTV.
+
+### 5. Video Management System (VMS) & Multi-Camera PTZ Engine
+- **Tech Stack**: C#, ASP.NET Core, MediaMTX, WebRTC (WHEP), ONVIF Protocol, H.264 / H.265 RTSP.
+- **Architecture**: Real-time IP camera management supporting ONVIF WS-Discovery, PTZ joystick control, sub-200ms multi-camera live grid streaming, and synchronized historical video playback.
+
+### 6. Edge-Based ANPR & Automatic Traffic Classifier (ATCC)
+- **Tech Stack**: Python, YOLOv8, PaddleOCR, ByteTrack, Raspberry Pi 5, NCNN, OpenVINO, Hugging Face Spaces.
+- **Architecture**: Edge computer vision pipeline deployed on Raspberry Pi 5 achieving 15+ FPS. Fine-tuned PaddleOCR on 5,000+ Indian vehicle plates achieving 98% accuracy. Live interactive demo deployed on Hugging Face Spaces.
+
+### 7. ATMS PWA & Mobile Toll Field Operator Console
+- **Tech Stack**: Progressive Web Apps (PWA), Service Workers, JavaScript ES6+, .NET Core Web API, PostgreSQL.
+- **Architecture**: Offline-first mobile diagnostic web application for roadside technicians to trigger gate relays, view camera snapshots, and record incident logs during network disconnects.
+
+---
+
+## Technical Skills Matrix
+
+- **.NET & Backend**: C# (.NET 8, .NET Core, .NET Framework), ASP.NET Core Web API / MVC, Windows Services, Background Workers, SignalR WebSockets, Entity Framework Core, ADO.NET, FastReport, RDLC.
+- **Python & Vision AI**: Python 3.11, PyTorch, YOLOv8, PaddleOCR, OSNet, FAISS Vector Search, OpenCV, OpenVINO, NCNN, FastAPI.
+- **Databases & Streaming**: PostgreSQL 16 (Npgsql), Microsoft SQL Server, Query Optimization, Stored Procedures, MediaMTX, WebRTC (WHEP), ONVIF, RTSP.
+- **Frontend & Edge Tools**: Angular, TypeScript, JavaScript ES6+, HTML5 / Vanilla CSS, Leaflet.js GIS, Raspberry Pi 5, Linux Systemd, Serial ESC/POS, GPIO Relays, Service Workers.
