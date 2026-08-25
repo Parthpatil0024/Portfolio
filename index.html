@@ -3,918 +3,2227 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Parth Patil · Developer</title>
-  <meta name="description" content="Parth Patil — .NET Developer with 3+ years in C#, ASP.NET, .NET Core, Angular, and AI/ML. Edge AI, Computer Vision, enterprise solutions." />
+  <title>Parth Patil · Software Engineer (.NET & Edge Computer Vision)</title>
+  <meta name="description" content="Portfolio of Parth Patil — Software Engineer with 4+ years experience building C# / .NET Core backends, real-time IoT systems, and embedded computer vision pipelines." />
+  <meta name="keywords" content="Parth Patil, .NET Developer, C#, ASP.NET Core, Python, Computer Vision, YOLOv8, PaddleOCR, Edge AI, OpenVINO, FAISS, PostgreSQL, Smart Parking, ATMS, Video Management System" />
+  <meta name="author" content="Parth Patil" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Parth Patil · Software Engineer (.NET & Edge Computer Vision)" />
+  <meta property="og:description" content="4+ years experience building .NET enterprise backends, low-latency streaming systems, and edge vision models for highway and transit infrastructure." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Sora (Headings), Inter (Body), JetBrains Mono (Code/Telemetry) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
   <style>
-    /* ── TOKENS ─────────────────────────────────────────── */
+    /* ── DESIGN TOKENS (Matte Titanium & Industrial Dark) ────── */
     :root {
-      --cream:   #f5f0e8;
-      --paper:   #ede7d9;
-      --forest:  #1a2e1f;
-      --moss:    #2d4a32;
-      --sage:    #6b8f71;
-      --amber:   #c8853a;
-      --amber-l: #e8a55a;
-      --ink:     #0f1a12;
-      --mist:    rgba(245,240,232,0.06);
-      --grain-opacity: 0.035;
-      --r: 1rem;
+      --bg-base: #0a0c10;
+      --bg-surface: #11141a;
+      --bg-card: #151922;
+      --bg-card-hover: #1b202b;
+      --bg-glass: rgba(17, 20, 26, 0.85);
+
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.14);
+      --border-highlight: rgba(56, 189, 248, 0.4);
+
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+
+      --accent-blue: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+
+      --font-display: 'Sora', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.15s ease;
+      --transition-smooth: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* ── RESET ──────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    /* ── BASE RESET ──────────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      color-scheme: dark;
+    }
 
     body {
-      background: var(--forest);
-      color: var(--cream);
-      font-family: 'JetBrains Mono', monospace;
-      font-weight: 300;
-      line-height: 1.7;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
       overflow-x: hidden;
-      cursor: none;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(16, 185, 129, 0.03) 0%, transparent 45%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
     }
 
-    /* ── CUSTOM CURSOR ──────────────────────────────────── */
-    .cursor-dot,
-    .cursor-ring {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ── NAVBAR ──────────────────────────────────────────────── */
+    #navbar {
       position: fixed;
-      top: 0; left: 0;
-      z-index: 9999;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all var(--transition-smooth);
+    }
+    #navbar.scrolled {
+      padding: 0.75rem 3rem;
+      border-bottom-color: var(--border-medium);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      background: #1e2430;
+      border: 1px solid var(--border-medium);
+      color: var(--accent-blue);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .brand-status {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--accent-emerald);
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      will-change: left, top;
-    }
-    .cursor-dot {
-      width: 8px; height: 8px;
-      background: var(--amber);
-    }
-    .cursor-ring {
-      width: 36px; height: 36px;
-      border: 1px solid rgba(200,133,58,.5);
-      background: transparent;
-      transition: width .2s, height .2s, opacity .2s;
-    }
-    body:has(a:hover) .cursor-ring,
-    body:has(button:hover) .cursor-ring { width: 56px; height: 56px; opacity: .6; }
-
-    /* ── GRAIN OVERLAY ──────────────────────────────────── */
-    body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: 1000;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      opacity: var(--grain-opacity);
+      background: var(--accent-emerald);
+      box-shadow: 0 0 8px var(--accent-emerald);
     }
 
-    /* ── THREE.JS CANVAS ────────────────────────────────── */
-    #bg {
-      position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 0;
-      pointer-events: none;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
     }
-
-    /* ── NAV ────────────────────────────────────────────── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.4rem 3rem;
-      transition: background .4s, backdrop-filter .4s;
-    }
-    nav.scrolled {
-      background: rgba(15,26,18,.8);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(107,143,113,.12);
-    }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 600;
-      color: var(--amber);
-      letter-spacing: .08em;
-    }
-    .nav-links { display: flex; gap: 2.4rem; list-style: none; }
     .nav-links a {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .72rem; font-weight: 400;
-      color: var(--sage); text-decoration: none;
-      letter-spacing: .12em; text-transform: uppercase;
-      transition: color .25s;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color var(--transition-fast);
     }
-    .nav-links a:hover { color: var(--cream); }
-
-    /* ── SECTIONS BASE ──────────────────────────────────── */
-    section {
-      position: relative; z-index: 10;
-      padding: 7rem 3rem;
-      max-width: 1100px;
-      margin: 0 auto;
+    .nav-links a:hover {
+      color: var(--text-primary);
     }
 
-    /* ── SECTION LABEL ──────────────────────────────────── */
-    .label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .68rem; font-weight: 500;
-      letter-spacing: .2em; text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: 1rem;
-      opacity: 0; transform: translateY(16px);
-      transition: opacity .6s, transform .6s;
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 300; line-height: 1.1;
-      color: var(--cream);
-      margin-bottom: 3.5rem;
-      opacity: 0; transform: translateY(20px);
-      transition: opacity .7s .1s, transform .7s .1s;
-    }
-    .in-view .label, .in-view .section-title { opacity: 1; transform: none; }
 
-    /* ── HERO ───────────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding-top: 0;
-      max-width: none;
-      padding-left: min(10vw, 8rem);
+    /* ── BUTTONS & BADGES ────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+      border: 1px solid transparent;
     }
-    .hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .7rem; font-weight: 400;
-      letter-spacing: .25em; text-transform: uppercase;
-      color: var(--amber); margin-bottom: 1.2rem;
-      opacity: 0; animation: fadeUp .8s .3s forwards;
-    }
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4rem, 10vw, 9rem);
-      font-weight: 300; line-height: .95;
-      letter-spacing: -.01em;
-      color: var(--cream);
-      opacity: 0; animation: fadeUp .9s .5s forwards;
-    }
-    .hero-name em {
-      font-style: italic; color: var(--amber-l);
-    }
-    .hero-title {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(.9rem, 2vw, 1.15rem);
-      font-weight: 300; color: var(--sage);
-      margin-top: 1.6rem; margin-bottom: 3rem;
-      opacity: 0; animation: fadeUp .8s .7s forwards;
-    }
-    .hero-title span { color: var(--cream); }
-    .hero-cta {
-      display: flex; gap: 1.4rem; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp .8s .9s forwards;
+    .btn-sm {
+      padding: 0.45rem 0.85rem;
+      font-size: 0.78rem;
     }
     .btn-primary {
-      display: inline-flex; align-items: center; gap: .6rem;
-      padding: .85rem 2rem;
-      background: var(--amber);
-      color: var(--ink);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .75rem; font-weight: 500;
-      letter-spacing: .1em; text-transform: uppercase;
-      text-decoration: none; border: none; cursor: none;
-      transition: background .25s, transform .2s;
+      background: #1e293b;
+      color: var(--text-primary);
+      border-color: var(--border-medium);
     }
-    .btn-primary:hover { background: var(--amber-l); transform: translateY(-2px); }
+    .btn-primary:hover {
+      background: #283548;
+      border-color: var(--accent-blue);
+      color: #ffffff;
+    }
+    .btn-blue {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.35);
+      color: var(--accent-blue);
+    }
+    .btn-blue:hover {
+      background: var(--accent-blue);
+      color: #04111d;
+    }
+    .btn-emerald {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.35);
+      color: var(--accent-emerald);
+    }
+    .btn-emerald:hover {
+      background: var(--accent-emerald);
+      color: #031c12;
+    }
+    .btn-amber {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.35);
+      color: #fbbf24;
+    }
+    .btn-amber:hover {
+      background: #f59e0b;
+      color: #1a0f00;
+    }
     .btn-ghost {
-      display: inline-flex; align-items: center; gap: .6rem;
-      padding: .85rem 2rem;
       background: transparent;
-      border: 1px solid var(--sage);
-      color: var(--sage);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .75rem; font-weight: 400;
-      letter-spacing: .1em; text-transform: uppercase;
-      text-decoration: none; cursor: none;
-      transition: border-color .25s, color .25s, transform .2s;
+      border-color: var(--border-subtle);
+      color: var(--text-secondary);
     }
-    .btn-ghost:hover { border-color: var(--cream); color: var(--cream); transform: translateY(-2px); }
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      border-color: var(--border-medium);
+    }
+
+    /* ── LAYOUT & CONTAINER ──────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin-top: 0.75rem;
+    }
+
+    /* ── HERO SECTION ───────────────────────────────────────── */
+    #hero {
+      padding-top: 9.5rem;
+      padding-bottom: 5.5rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: #141a23;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+    }
+    .hero-h1 span.highlight {
+      color: var(--accent-blue);
+    }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+    .hero-bio strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
     .hero-socials {
-      display: flex; gap: 1.4rem; margin-top: 3.5rem;
-      opacity: 0; animation: fadeUp .8s 1.1s forwards;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-subtle);
     }
     .hero-socials a {
-      color: var(--sage); font-size: 1.1rem;
-      text-decoration: none; transition: color .25s, transform .25s;
-      cursor: none;
+      color: var(--text-secondary);
+      font-size: 1.25rem;
+      transition: color var(--transition-fast);
+      display: flex;
+      align-items: center;
     }
-    .hero-socials a:hover { color: var(--amber); transform: translateY(-3px); }
-
-    /* hero scroll line */
-    .scroll-line {
-      position: absolute; bottom: 3rem; left: min(10vw, 8rem);
-      display: flex; align-items: center; gap: 1rem;
-      opacity: 0; animation: fadeUp .8s 1.3s forwards;
-    }
-    .scroll-line::before {
-      content: ''; display: block;
-      width: 48px; height: 1px; background: var(--sage);
-    }
-    .scroll-line span {
-      font-size: .62rem; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--sage);
+    .hero-socials a:hover {
+      color: var(--accent-blue);
     }
 
-    /* ── DIVIDER BLOB ───────────────────────────────────── */
-    .blob-divider {
-      position: relative; z-index: 10;
-      width: 100%; overflow: hidden;
-      line-height: 0;
+    /* ── COCKPIT SPEC CONSOLE (Hero Right) ────────────────────── */
+    .cockpit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
     }
-    .blob-divider svg { display: block; }
+    .cockpit-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.2rem;
+      background: #10141b;
+      border-bottom: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .cockpit-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .cockpit-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2d3748;
+    }
 
-    /* ── ABOUT ──────────────────────────────────────────── */
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
-      align-items: start;
+    .cockpit-body {
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
     }
-    .about-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem; font-weight: 300; line-height: 1.6;
-      color: rgba(245,240,232,.85);
+    .spec-box {
+      padding: 1rem;
+      background: #0f1218;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
     }
-    .about-text em { font-style: italic; color: var(--amber-l); }
-    .tags {
-      display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2rem;
+    .spec-num {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
     }
-    .tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .65rem; font-weight: 400;
-      letter-spacing: .1em; text-transform: uppercase;
-      padding: .35rem .75rem;
-      border: 1px solid rgba(107,143,113,.4);
-      color: var(--sage);
-      transition: border-color .2s, color .2s;
+    .spec-num.blue { color: var(--accent-blue); }
+    .spec-num.emerald { color: var(--accent-emerald); }
+    .spec-num.amber { color: var(--accent-amber); }
+    .spec-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.2rem;
     }
-    .tag:hover { border-color: var(--amber); color: var(--amber-l); }
+    .spec-detail {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
 
-    /* ── EXPERIENCE ─────────────────────────────────────── */
-    .exp-company {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .7rem; letter-spacing: .15em; text-transform: uppercase;
-      color: var(--sage); margin-bottom: .5rem;
+    .cockpit-footer {
+      padding: 0.9rem 1.5rem;
+      background: #0e1117;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-secondary);
     }
-    .exp-role {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem; font-weight: 400;
-      color: var(--cream); margin-bottom: .3rem;
-    }
-    .exp-date {
-      font-size: .68rem; color: var(--amber); letter-spacing: .12em;
+
+    /* ── TRACK FILTER CONTROLS ───────────────────────────────── */
+    .filter-strip {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       margin-bottom: 2.5rem;
+      flex-wrap: wrap;
     }
-    .project-block {
-      border-left: 1px solid rgba(107,143,113,.25);
-      padding-left: 2rem; margin-bottom: 3rem;
-      transition: border-color .3s;
+    .filter-btn {
+      padding: 0.55rem 1.1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    .project-block:hover { border-color: var(--amber); }
-    .project-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem; font-weight: 600;
-      color: var(--cream); margin-bottom: 1rem;
+    .filter-btn:hover {
+      border-color: var(--border-medium);
+      color: var(--text-primary);
     }
-    .project-block ul {
-      list-style: none; padding: 0;
+    .filter-btn.active {
+      background: #1e2736;
+      border-color: var(--accent-blue);
+      color: #ffffff;
     }
-    .project-block ul li {
-      font-size: .8rem; color: rgba(245,240,232,.7);
-      padding: .35rem 0 .35rem 1rem;
-      position: relative; line-height: 1.6;
-    }
-    .project-block ul li::before {
-      content: '→'; position: absolute; left: 0;
-      color: var(--amber); font-size: .7rem;
-    }
-    .tech-chips {
-      display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.2rem;
-    }
-    .chip {
-      font-size: .6rem; font-family: 'JetBrains Mono', monospace;
-      letter-spacing: .08em; padding: .2rem .55rem;
-      background: rgba(107,143,113,.12);
-      border: 1px solid rgba(107,143,113,.25);
-      color: var(--sage);
-    }
-
-    /* ── SKILLS ─────────────────────────────────────────── */
-    .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-    }
-    .skill-card {
-      padding: 2rem;
-      border: 1px solid rgba(107,143,113,.18);
-      background: rgba(245,240,232,.02);
-      transition: border-color .3s, background .3s, transform .3s;
-      transform-style: preserve-3d;
-    }
-    .skill-card:hover {
-      border-color: rgba(200,133,58,.4);
-      background: rgba(200,133,58,.04);
-      transform: translateY(-4px) rotateX(2deg) rotateY(1deg);
-    }
-    .skill-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 600;
-      color: var(--amber-l); margin-bottom: 1.2rem;
-      padding-bottom: .8rem;
-      border-bottom: 1px solid rgba(107,143,113,.2);
-    }
-    .skill-card ul { list-style: none; }
-    .skill-card ul li {
-      font-size: .72rem; color: rgba(245,240,232,.72);
-      padding: .3rem 0;
-      border-bottom: 1px solid rgba(107,143,113,.06);
+    .filter-count {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-full);
+      background: rgba(0, 0, 0, 0.4);
+      font-size: 0.7rem;
+      color: var(--accent-blue);
     }
 
-    /* ── PROJECT CARDS ──────────────────────────────────── */
+    /* ── PROJECT CARDS ───────────────────────────────────────── */
     .projects-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      transition: border-color var(--transition-smooth);
+    }
+    .project-card:hover {
+      border-color: var(--border-medium);
+    }
+
+    .project-body {
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .project-category-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .tag-dotnet {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent-blue);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+    .tag-python {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+    .project-lead {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      line-height: 1.55;
+    }
+
+    .project-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
+    }
+    .project-points li {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .project-points li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+      font-size: 0.9rem;
+    }
+    .project-card.track-python .project-points li::before {
+      color: var(--accent-emerald);
+    }
+    .project-points strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .tech-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.5rem;
+    }
+    .tech-pill {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      background: #0f131a;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+
+    .project-action-row {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── PROJECT GALLERY CONTAINER (Right) ───────────────────── */
+    .project-gallery-pane {
+      background: #0c0f14;
+      border-left: 1px solid var(--border-subtle);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .gallery-preview-box {
+      position: relative;
+      background: #07090c;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      cursor: pointer;
+      flex: 1;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-preview-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.3s ease;
+    }
+    .gallery-preview-box:hover .gallery-preview-img {
+      transform: scale(1.03);
+    }
+
+    .gallery-hover-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.65rem 0.9rem;
+      background: rgba(8, 11, 16, 0.88);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-primary);
+    }
+
+    .gallery-thumbs-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      gap: 0.5rem;
+    }
+    .thumb-button {
+      background: #090c10;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      cursor: pointer;
+      padding: 0;
+      transition: all var(--transition-fast);
+      opacity: 0.6;
+    }
+    .thumb-button:hover {
+      opacity: 0.9;
+      border-color: var(--border-medium);
+    }
+    .thumb-button.active {
+      opacity: 1;
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+    }
+    .thumb-button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── SYSTEM ARCHITECTURE DATA FLOW ───────────────────────── */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .arch-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .arch-step-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .arch-card-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+    .arch-card-desc {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ── TECHNICAL SKILLS GRID ───────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .skill-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+    }
+    .skill-block-title {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .skill-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.15rem 0.45rem;
+      background: #0f131a;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+    }
+
+    /* ── CREDENTIALS SECTION ─────────────────────────────────── */
+    .creds-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
-    .pcard {
-      padding: 2.5rem;
-      border: 1px solid rgba(107,143,113,.18);
-      background: rgba(245,240,232,.02);
-      transition: border-color .3s, background .3s, transform .35s;
-      transform-style: preserve-3d;
+    .cred-group-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    .pcard:hover {
-      border-color: rgba(200,133,58,.35);
-      background: rgba(200,133,58,.03);
-      transform: translateY(-6px) rotateX(1.5deg) rotateY(-1deg);
+    .cred-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+      margin-bottom: 1rem;
+      transition: all var(--transition-fast);
+      display: block;
     }
-    .pcard-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 600;
-      color: var(--cream); margin-bottom: 1.2rem;
+    .cred-card:hover {
+      border-color: var(--border-medium);
     }
-    .pcard ul { list-style: none; padding: 0; }
-    .pcard ul li {
-      font-size: .75rem; color: rgba(245,240,232,.68);
-      padding: .35rem 0 .35rem 1rem;
-      position: relative; line-height: 1.65;
-      border-bottom: 1px solid rgba(107,143,113,.06);
+    .cred-issuer {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent-amber);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
     }
-    .pcard ul li::before {
-      content: '·'; position: absolute; left: 0;
-      color: var(--amber);
+    .cred-name {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+    .cred-meta {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
     }
 
-    /* ── PATENTS / EDUCATION / CERTS ────────────────────── */
-    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .simple-card {
-      padding: 2rem;
-      border: 1px solid rgba(107,143,113,.18);
-      background: rgba(245,240,232,.02);
+    .cert-link-card {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      background: #131a24;
+      border-color: rgba(56, 189, 248, 0.25);
     }
-    .simple-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; font-weight: 600; color: var(--cream);
-      margin-bottom: .5rem;
+    .cert-link-card:hover {
+      border-color: var(--accent-blue);
+      background: #182230;
     }
-    .simple-card p {
-      font-size: .72rem; color: var(--sage); letter-spacing: .08em;
+    .cert-icon-img {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
     }
-    .edu-timeline { display: flex; flex-direction: column; gap: 2.5rem; }
-    .edu-item { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; align-items: start; }
-    .edu-year {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 300;
-      color: var(--amber); line-height: 1;
-    }
-    .edu-body h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 600; color: var(--cream);
-      margin-bottom: .3rem;
-    }
-    .edu-body h4 { font-size: .72rem; color: var(--sage); font-weight: 400; margin-bottom: .2rem; }
-    .edu-body p { font-size: .68rem; color: var(--amber); letter-spacing: .1em; }
 
-    /* ── CONTACT ────────────────────────────────────────── */
-    #contact { text-align: center; }
-    .contact-big {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 5vw, 4rem);
-      font-weight: 300; font-style: italic;
-      color: rgba(245,240,232,.6);
-      margin-bottom: 2.5rem; line-height: 1.2;
+    /* ── CONTACT & FORMSUBMIT SECTION ────────────────────────── */
+    .contact-wrapper {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem;
     }
-    .contact-email {
-      display: inline-flex; align-items: center; gap: .8rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .9rem; color: var(--cream);
-      text-decoration: none; letter-spacing: .05em;
-      border-bottom: 1px solid var(--amber);
-      padding-bottom: .2rem;
-      transition: color .25s;
+    .contact-form {
+      margin-top: 2rem;
+      text-align: left;
     }
-    .contact-email:hover { color: var(--amber-l); }
-    .contact-socials {
-      display: flex; justify-content: center; gap: 1.8rem;
-      margin-top: 3rem;
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
     }
-    .contact-socials a {
-      color: var(--sage); font-size: 1.3rem;
-      text-decoration: none; transition: color .25s, transform .25s; cursor: none;
+    .form-group {
+      margin-bottom: 1.2rem;
     }
-    .contact-socials a:hover { color: var(--amber); transform: translateY(-4px); }
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: #0d1017;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.8rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      transition: all var(--transition-fast);
+      box-sizing: border-box;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+      background: #10151f;
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .form-submit-btn {
+      width: 100%;
+      padding: 0.95rem 1.5rem;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      background: #1e293b;
+      color: #ffffff;
+      border: 1px solid var(--border-medium);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all var(--transition-fast);
+    }
+    .form-submit-btn:hover {
+      background: var(--accent-blue);
+      color: #04131f;
+      border-color: var(--accent-blue);
+    }
+    .form-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 
-    /* ── FOOTER ─────────────────────────────────────────── */
+    .contact-divider {
+      display: flex;
+      align-items: center;
+      margin: 2.5rem 0 1.5rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .contact-divider::before, .contact-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+    .contact-divider span {
+      padding: 0 1rem;
+    }
+
+    .direct-email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 0.75rem 1.6rem;
+      background: #111722;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      margin-bottom: 1.5rem;
+    }
+    .direct-email-btn:hover {
+      background: #182232;
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    .contact-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    /* ── LIGHTBOX MODAL ──────────────────────────────────────── */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(5, 7, 10, 0.94);
+      backdrop-filter: blur(16px);
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem 2.5rem;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .lightbox-modal.open {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-primary);
+    }
+    .lightbox-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .lightbox-counter {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-blue);
+    }
+    .lightbox-close-btn {
+      background: #161b24;
+      border: 1px solid var(--border-medium);
+      color: var(--text-primary);
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all var(--transition-fast);
+    }
+    .lightbox-close-btn:hover {
+      background: #ef4444;
+      color: #ffffff;
+      border-color: #ef4444;
+    }
+
+    .lightbox-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      max-height: 76vh;
+      margin: 1rem 0;
+    }
+    .lightbox-img-el {
+      max-width: 90vw;
+      max-height: 74vh;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75);
+    }
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(22, 27, 36, 0.85);
+      border: 1px solid var(--border-medium);
+      color: var(--text-primary);
+      width: 46px;
+      height: 46px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all var(--transition-fast);
+    }
+    .lightbox-nav-btn:hover {
+      background: var(--accent-blue);
+      color: #04131f;
+    }
+    .lightbox-prev { left: 1rem; }
+    .lightbox-next { right: 1rem; }
+
+    .lightbox-caption-bar {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
+    /* ── TOAST POPUP ─────────────────────────────────────────── */
+    .toast-popup {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 10000;
+      background: #111827;
+      border: 1px solid var(--accent-emerald);
+      color: #ffffff;
+      padding: 0.85rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+    .toast-popup.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
     footer {
-      position: relative; z-index: 10;
-      text-align: center; padding: 2.5rem;
-      border-top: 1px solid rgba(107,143,113,.12);
-      font-size: .65rem; color: rgba(107,143,113,.5);
-      letter-spacing: .15em; text-transform: uppercase;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--text-muted);
     }
 
-    /* ── SCROLL REVEAL ──────────────────────────────────── */
-    .reveal {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-d1 { transition-delay: .1s; }
-    .reveal-d2 { transition-delay: .2s; }
-    .reveal-d3 { transition-delay: .3s; }
-    .reveal-d4 { transition-delay: .4s; }
-
-    /* ── KEYFRAMES ──────────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
+    /* ── RESPONSIVE MEDIA QUERIES ────────────────────────────── */
+    @media (max-width: 1024px) {
+      #navbar { padding: 1rem 1.5rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .project-card { grid-template-columns: 1fr; }
+      .project-gallery-pane { border-left: none; border-top: 1px solid var(--border-subtle); }
+      .arch-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .creds-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── RESPONSIVE ─────────────────────────────────────── */
     @media (max-width: 768px) {
-      nav { padding: 1.2rem 1.5rem; }
       .nav-links { display: none; }
-      #hero { padding-left: 1.5rem; }
-      section { padding: 5rem 1.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .two-col { grid-template-columns: 1fr; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .edu-item { grid-template-columns: 1fr; gap: .5rem; }
-    }
-
-    /* certification link */
-    a.cert-link { text-decoration: none; }
-    a.cert-link .simple-card {
-      transition: border-color .3s, transform .3s;
-    }
-    a.cert-link:hover .simple-card {
-      border-color: var(--amber);
-      transform: translateY(-4px);
+      section { padding: 4.5rem 0; }
+      .hero-h1 { font-size: 2.3rem; }
+      .cockpit-body { grid-template-columns: 1fr; }
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .arch-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .contact-wrapper { padding: 2rem 1.25rem; }
+      .gallery-thumbs-row { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Cursor -->
-  <div class="cursor-ring" id="cursor-ring"></div>
-  <div class="cursor-dot" id="cursor-dot"></div>
-
-  <!-- Three.js Canvas -->
-  <canvas id="bg"></canvas>
-
-  <!-- Nav -->
+  <!-- ── NAVIGATION BAR ─────────────────────────────────────── -->
   <nav id="navbar">
-    <div class="nav-logo">PP</div>
+    <a href="#hero" class="nav-brand">
+      <div class="brand-avatar">PP</div>
+      <div class="brand-info">
+        <span class="brand-name">Parth Patil</span>
+        <span class="brand-status"><span class="status-dot"></span> Open to roles</span>
+      </div>
+    </a>
+
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#creds">Patents & Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <div class="nav-actions">
+      <a href="assets/Parth_Patil_Resume_DotNet.docx" download class="btn btn-sm btn-blue" title="Download .NET / C# Resume">
+        <i class="fas fa-file-code"></i> .NET Resume
+      </a>
+      <a href="assets/Parth_Patil_Resume_Python.docx" download class="btn btn-sm btn-emerald" title="Download Python / AI Resume">
+        <i class="fab fa-python"></i> Python AI Resume
+      </a>
+    </div>
   </nav>
 
-  <!-- ── HERO ───────────────────────────────────────────── -->
+  <!-- ── HERO SECTION ───────────────────────────────────────── -->
   <section id="hero">
-    <p class="hero-eyebrow">// Portfolio · 2026</p>
-    <h1 class="hero-name">Parth<br><em>Patil</em></h1>
-    <p class="hero-title">
-      <span>.NET Developer</span> &nbsp;·&nbsp; AI / Computer Vision &nbsp;·&nbsp; Edge Systems
-    </p>
-    <div class="hero-cta">
-      <a href="assets/resume.pdf" download class="btn-primary">
-        <i class="fas fa-download"></i> Resume
-      </a>
-      <a href="#contact" class="btn-ghost">Get in Touch</a>
-    </div>
-    <div class="hero-socials">
-      <a href="https://github.com/Parthpatil0024" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/parth-patil1999/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://leetcode.com/u/parthpatil0024" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
-    </div>
-    <div class="scroll-line"><span>Scroll</span></div>
-  </section>
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Hero Left: Bio & Intro -->
+        <div>
+          <div class="hero-eyebrow">
+            <span class="status-dot"></span> 4+ Years Experience · .NET Backends & Edge Vision
+          </div>
 
-  <!-- ── ABOUT ──────────────────────────────────────────── -->
-  <section id="about">
-    <p class="label reveal">01 &mdash; About</p>
-    <h2 class="section-title reveal">Crafting systems<br><em style="font-style:italic;color:var(--amber-l)">that think.</em></h2>
-    <div class="about-grid">
-      <p class="about-text reveal reveal-d1">
-        .NET Developer with <em>3+ years</em> building enterprise systems, highway-scale infrastructure, and edge-deployed AI pipelines. I write C# by day, fine-tune YOLO models by night, and find beauty in the place where <em>structured systems meet organic intelligence</em>.
-      </p>
-      <div>
-        <div class="tags reveal reveal-d2">
-          <span class="tag">C#</span><span class="tag">ASP.NET MVC</span><span class="tag">.NET Core</span>
-          <span class="tag">Web API</span><span class="tag">Angular</span><span class="tag">TypeScript</span>
-          <span class="tag">Python</span><span class="tag">MSSQL</span><span class="tag">PostgreSQL</span>
-          <span class="tag">Entity Framework</span><span class="tag">ADO.NET</span><span class="tag">YOLOv5/v8</span>
-          <span class="tag">OpenCV</span><span class="tag">OpenVINO</span><span class="tag">NCNN</span>
-          <span class="tag">PaddleOCR</span><span class="tag">FAISS</span><span class="tag">ByteTrack</span>
-          <span class="tag">Flask</span><span class="tag">Leaflet.js</span>
+          <h1 class="hero-h1">
+            Backend Systems, IoT & <br>
+            <span class="highlight">Computer Vision.</span>
+          </h1>
+
+          <p class="hero-bio">
+            Hi, I'm <strong>Parth Patil</strong> — a software engineer specializing in <strong>C# / .NET Core backends</strong>, <strong>distributed hardware IoT services</strong>, and <strong>embedded computer vision</strong>. I completed my M.Tech in Applied AI from <strong>VNIT Nagpur</strong> and hold 2 registered patents. Over the past 4+ years, I've built toll plaza automation software, low-latency RTSP/WebRTC streaming servers, and license plate recognition pipelines running on live highways across India.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-layer-group"></i> View Case Studies
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <i class="fas fa-envelope"></i> Get in Touch
+            </a>
+          </div>
+
+          <div class="hero-socials">
+            <span style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">Connect / Verify:</span>
+            <a href="https://github.com/Parthpatil0024" target="_blank" title="GitHub Profile"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/parth-patil1999/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            <a href="https://leetcode.com/u/parthpatil0024" target="_blank" title="LeetCode Profile"><i class="fas fa-code"></i></a>
+            <a href="mailto:parthpatil0024@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          </div>
         </div>
+
+        <!-- Hero Right: Engineering Cockpit Console -->
+        <div class="cockpit-card">
+          <div class="cockpit-topbar">
+            <div class="cockpit-dots">
+              <div class="cockpit-dot"></div>
+              <div class="cockpit-dot"></div>
+              <div class="cockpit-dot"></div>
+            </div>
+            <span>ENGINEERING_SPECS.JSON</span>
+          </div>
+
+          <div class="cockpit-body">
+            <div class="spec-box">
+              <div class="spec-num blue">4+ Yrs</div>
+              <div class="spec-label">Production Experience</div>
+              <div class="spec-detail">.NET 8 backends, POS automation, and edge services.</div>
+            </div>
+
+            <div class="spec-box">
+              <div class="spec-num emerald">150+</div>
+              <div class="spec-label">Monitored Lane Devices</div>
+              <div class="spec-detail">Live health telemetry across cameras, barriers, and sensors.</div>
+            </div>
+
+            <div class="spec-box">
+              <div class="spec-num emerald">&lt; 5ms</div>
+              <div class="spec-label">Core Processing Latency</div>
+              <div class="spec-detail">Sub-millisecond tariff evaluation, memory caching, and IO triggers.</div>
+            </div>
+
+            <div class="spec-box">
+              <div class="spec-num amber">2</div>
+              <div class="spec-label">Registered Patents</div>
+              <div class="spec-detail">Government registered innovations in IoT & hardware.</div>
+            </div>
+          </div>
+
+          <div class="cockpit-footer">
+            <span>M.Tech Applied AI · VNIT Nagpur</span>
+            <span style="color:var(--accent-blue)">AZ-900 Certified</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── EXPERIENCE ─────────────────────────────────────── -->
-  <section id="experience">
-    <p class="label reveal">02 &mdash; Experience</p>
-    <h2 class="section-title reveal">Where the work<br>lives.</h2>
-
-    <p class="exp-company reveal">Arya Omnitalk Wireless Solutions, Pune</p>
-    <p class="exp-role reveal reveal-d1">DotNet Developer</p>
-    <p class="exp-date reveal reveal-d2">June 2022 — Present</p>
-
-    <div class="project-block reveal reveal-d2">
-      <p class="project-name">NEXGEN · Highway Device Management</p>
-      <ul>
-        <li>Centralized control-room software integrating cameras, VMS, ATCC, ECB, and meteorological sensors with real-time monitoring</li>
-        <li>Modular Windows Services architecture with isolated failure domains and independent scaling</li>
-        <li>Unified GIS dashboard with live telemetry via Leaflet.js for immediate situational awareness</li>
-      </ul>
-      <div class="tech-chips">
-        <span class="chip">.NET Core MVC</span><span class="chip">Web API</span><span class="chip">PostgreSQL</span>
-        <span class="chip">Angular</span><span class="chip">Leaflet.js</span><span class="chip">Windows Services</span><span class="chip">ADO.NET</span>
-      </div>
-    </div>
-
-    <div class="project-block reveal reveal-d3">
-      <p class="project-name">ANPR Multi-Lane Monitoring Dashboard</p>
-      <ul>
-        <li>Three-tier system (LPU → Plaza → Central) for multi-lane ANPR across toll plazas</li>
-        <li>Heartbeat monitoring with automatic alarm resolution — reduced manual monitoring by 70%</li>
-        <li>In-memory state store with polling-based updates for real-time UI across 150+ concurrent lanes</li>
-      </ul>
-      <div class="tech-chips">
-        <span class="chip">.NET Core MVC</span><span class="chip">Web API</span><span class="chip">Windows Services</span>
-        <span class="chip">PostgreSQL</span><span class="chip">JavaScript</span>
-      </div>
-    </div>
-
-    <div class="project-block reveal reveal-d4">
-      <p class="project-name">Cash Deposit System Enhancement</p>
-      <ul>
-        <li>Enhanced cash-flow management for toll plaza operations</li>
-        <li>Stored procedure optimization improved reconciliation response times by 40%</li>
-      </ul>
-      <div class="tech-chips">
-        <span class="chip">ASP.NET MVC</span><span class="chip">AngularJS</span><span class="chip">MSSQL</span>
-        <span class="chip">RDLC Reports</span><span class="chip">Stored Procedures</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SKILLS ──────────────────────────────────────────── -->
-  <section id="skills">
-    <p class="label reveal">03 &mdash; Skills</p>
-    <h2 class="section-title reveal">The toolkit.</h2>
-    <div class="skills-grid">
-      <div class="skill-card reveal reveal-d1">
-        <p class="skill-card-title">Backend</p>
-        <ul>
-          <li>C# · ASP.NET MVC</li><li>.NET Core · Web API</li>
-          <li>Windows Services</li><li>Entity Framework · ADO.NET</li>
-        </ul>
-      </div>
-      <div class="skill-card reveal reveal-d2">
-        <p class="skill-card-title">Frontend</p>
-        <ul>
-          <li>Angular · TypeScript</li><li>JavaScript · HTML5 / CSS3</li>
-          <li>Bootstrap · Leaflet.js</li>
-        </ul>
-      </div>
-      <div class="skill-card reveal reveal-d3">
-        <p class="skill-card-title">Data</p>
-        <ul>
-          <li>Microsoft SQL Server</li><li>PostgreSQL</li>
-          <li>Stored Procedures</li><li>DB Optimization</li>
-        </ul>
-      </div>
-      <div class="skill-card reveal reveal-d4">
-        <p class="skill-card-title">AI / CV</p>
-        <ul>
-          <li>Python · YOLOv5/v8</li><li>OpenCV · OpenVINO · NCNN</li>
-          <li>PaddleOCR · FAISS · ByteTrack</li>
-          <li>Scikit-learn · Flask</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PROJECTS ────────────────────────────────────────── -->
+  <!-- ── PROJECTS SECTION ───────────────────────────────────── -->
   <section id="projects">
-    <p class="label reveal">04 &mdash; AI / ML Projects</p>
-    <h2 class="section-title reveal">Intelligent<br>things I've built.</h2>
-    <div class="projects-grid">
-      <div class="pcard reveal reveal-d1">
-        <p class="pcard-title">Edge-Based ANPR · Real-Time Processing</p>
-        <ul>
-          <li>Lightweight ANPR for Raspberry Pi 5 on live RTSP streams — 95% accuracy on Indian plates</li>
-          <li>Hybrid CV pipeline: YOLO detection + PaddleOCR recognition at 15 FPS</li>
-          <li>Fine-tuned on 5,000+ custom images for local fonts and lighting</li>
-          <li>NCNN quantization reduced model size by 70%</li>
-          <li>Flask REST API with confidence-based filtering — 85% fewer false positives</li>
-        </ul>
-        <div class="tech-chips" style="margin-top:1.5rem">
-          <span class="chip">Python</span><span class="chip">YOLO</span><span class="chip">PaddleOCR</span>
-          <span class="chip">NCNN</span><span class="chip">Flask</span><span class="chip">PostgreSQL</span>
-          <span class="chip">OpenCV</span><span class="chip">Raspberry Pi 5</span>
-        </div>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">01 — Production Systems</p>
+        <h2 class="section-title">Case Studies & Deployed Code</h2>
+        <p class="section-desc">
+          High-throughput distributed backends, computer vision pipelines, and embedded hardware controllers I've designed, built, and deployed to production. Click any screenshot for fullscreen inspection.
+        </p>
       </div>
 
-      <div class="pcard reveal reveal-d2">
-        <p class="pcard-title">Vehicle Re-ID · Transaction Matching</p>
-        <ul>
-          <li>OSNet IBN 1.0x for matching entry-exit transactions where ANPR fails</li>
-          <li>512-dimensional embeddings with 8-hour window FAISS similarity search</li>
-          <li>Re-ranking combining visual similarity + metadata — +15% accuracy</li>
-          <li>1,000+ daily transactions with 92% matching accuracy; 80% less manual verification</li>
-        </ul>
-        <div class="tech-chips" style="margin-top:1.5rem">
-          <span class="chip">Python</span><span class="chip">OSNet</span><span class="chip">FAISS</span>
-          <span class="chip">Deep Learning</span><span class="chip">PostgreSQL</span>
-        </div>
+      <!-- Filter Controls -->
+      <div class="filter-strip">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-globe"></i> All Systems <span class="filter-count">7</span>
+        </button>
+        <button class="filter-btn" data-filter="dotnet">
+          <i class="fas fa-server" style="color:var(--accent-blue)"></i> .NET & Distributed Systems <span class="filter-count">4</span>
+        </button>
+        <button class="filter-btn" data-filter="python">
+          <i class="fab fa-python" style="color:var(--accent-emerald)"></i> Python, Edge AI & Vision <span class="filter-count">3</span>
+        </button>
       </div>
 
-      <div class="pcard reveal reveal-d3">
-        <p class="pcard-title">Real-Time Incident Detection · Highway</p>
-        <ul>
-          <li>YOLOv8 for accidents, wrong-way driving, and violations on highway feeds</li>
-          <li>ByteTrack multi-object tracking for anomalous behavior detection</li>
-          <li>Rule-based alerts analyzing trajectories, speeds, and positions — 40% faster response</li>
-          <li>4 concurrent streams at 20+ FPS, alert latency &lt;2 seconds</li>
-        </ul>
-        <div class="tech-chips" style="margin-top:1.5rem">
-          <span class="chip">Python</span><span class="chip">YOLOv8</span><span class="chip">ByteTrack</span>
-          <span class="chip">OpenCV</span><span class="chip">Flask</span><span class="chip">RTSP</span>
-        </div>
+      <!-- Project Cards List -->
+      <div class="projects-grid">
+
+        <!-- PROJECT 1: ParkAOT -->
+        <article class="project-card track-dotnet" data-category="dotnet">
+          <div class="project-body">
+            <div>
+              <div class="project-topbar">
+                <span class="project-category-tag tag-dotnet">.NET 8 · POS Automation · Hardware Relays</span>
+              </div>
+              <h3 class="project-title">ParkAOT (ParkOS) – Smart Parking & Hardware Automation</h3>
+              <p class="project-lead">
+                POS automation and lane control software deployed at Kollam Railway Transit Plaza, managing vehicle ingress/egress, dynamic billing, and peripheral hardware.
+              </p>
+              <ul class="project-points">
+                <li><strong>Dynamic Tariff Calculation:</strong> Engineered ASP.NET Core (.NET 8 MVC) backend evaluating complex JSON-configured tariff slabs in under 5ms with memory caching.</li>
+                <li><strong>Hardware Peripheral Control:</strong> Interfaced with 80mm ESC/POS thermal slip printers, barrier gate IO relay microcontrollers, LED User Fare Displays, and ANPR cameras.</li>
+                <li><strong>Offline-First Synchronization:</strong> Built a background worker (<code>IHostedService</code>) that caches transactions locally to disk during network or database drops, syncing automatically on reconnection.</li>
+                <li><strong>Live Device Health:</strong> Streamed peripheral telemetry (printer paper status, loop detector triggers, barrier heartbeats) over SignalR WebSockets.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-pill-row">
+                <span class="tech-pill">C# .NET 8.0</span>
+                <span class="tech-pill">ASP.NET Core MVC</span>
+                <span class="tech-pill">SignalR</span>
+                <span class="tech-pill">PostgreSQL 16</span>
+                <span class="tech-pill">EF Core 8</span>
+                <span class="tech-pill">FastReport</span>
+                <span class="tech-pill">MediaMTX WebRTC</span>
+              </div>
+              <div class="project-action-row">
+                <button class="btn btn-sm btn-ghost" onclick="openLightbox('ParkAOT', 0)">
+                  <i class="fas fa-expand"></i> Inspect Screenshots (7)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Pane -->
+          <div class="project-gallery-pane" data-project="ParkAOT">
+            <div class="gallery-preview-box" onclick="openLightbox('ParkAOT', 0)">
+              <img id="main-view-ParkAOT" class="gallery-preview-img" src="assets/ParkAOT/Screenshot 2026-08-25 122503.png" alt="ParkAOT Operator POS Dashboard" />
+              <div class="gallery-hover-bar">
+                <span id="caption-ParkAOT">Operator POS · Entry Lane Dashboard</span>
+                <span><i class="fas fa-search-plus"></i> View</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs-row">
+              <button class="thumb-button active" onclick="switchGalleryThumb('ParkAOT', 0, 'assets/ParkAOT/Screenshot 2026-08-25 122503.png', 'Operator POS · Entry Lane Dashboard')">
+                <img src="assets/ParkAOT/Screenshot 2026-08-25 122503.png" alt="POS 1" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ParkAOT', 1, 'assets/ParkAOT/Screenshot 2026-08-25 122523.png', 'ANPR OCR Verification Console')">
+                <img src="assets/ParkAOT/Screenshot 2026-08-25 122523.png" alt="POS 2" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ParkAOT', 2, 'assets/ParkAOT/Screenshot 2026-08-25 122539.png', 'Exit Lane Tariff & Settlement')">
+                <img src="assets/ParkAOT/Screenshot 2026-08-25 122539.png" alt="POS 3" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ParkAOT', 3, 'assets/ParkAOT/Screenshot 2026-08-25 122558.png', 'Thermal Slip & Barcode Preview')">
+                <img src="assets/ParkAOT/Screenshot 2026-08-25 122558.png" alt="POS 4" />
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: ANPR Central Monitoring -->
+        <article class="project-card track-dotnet" data-category="dotnet">
+          <div class="project-body">
+            <div>
+              <div class="project-topbar">
+                <span class="project-category-tag tag-dotnet">3-Tier Architecture · Windows Services · 150+ Lanes</span>
+              </div>
+              <h3 class="project-title">ANPR Multi-Lane Central Monitoring & Plaza Telemetry Dashboard</h3>
+              <p class="project-lead">
+                Distributed monitoring platform aggregating real-time ANPR camera feeds, lane health telemetry, and automatic alarms across 150+ highway toll lanes.
+              </p>
+              <ul class="project-points">
+                <li><strong>Distributed 3-Tier Pipeline:</strong> Structured pipeline across Lane Processing Units (LPU) &rarr; Plaza Server &rarr; Central Server to reliably handle concurrent vehicle detections during peak traffic hours.</li>
+                <li><strong>Automated Health & Alarm Handling:</strong> Built background polling daemons that track device heartbeats and auto-resolve transient alarms, cutting manual operator triage by 70%.</li>
+                <li><strong>In-Memory State Store:</strong> Implemented memory caching and delta sync delivering sub-second UI status refreshes for 150+ active toll lanes.</li>
+                <li><strong>PostgreSQL Audit Database:</strong> Designed relational database tables in PostgreSQL logging millions of OCR plate transactions, timestamps, and hardware health alarms.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-pill-row">
+                <span class="tech-pill">.NET Core MVC</span>
+                <span class="tech-pill">C# Web API</span>
+                <span class="tech-pill">3-Tier Architecture</span>
+                <span class="tech-pill">Windows Services</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">JavaScript / AJAX</span>
+                <span class="tech-pill">150+ Toll Lanes</span>
+              </div>
+              <div class="project-action-row">
+                <button class="btn btn-sm btn-ghost" onclick="openLightbox('ANPR_central_monitoring', 0)">
+                  <i class="fas fa-expand"></i> Inspect Screenshots (4)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Pane -->
+          <div class="project-gallery-pane" data-project="ANPR_central_monitoring">
+            <div class="gallery-preview-box" onclick="openLightbox('ANPR_central_monitoring', 0)">
+              <img id="main-view-ANPR_central_monitoring" class="gallery-preview-img" src="assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145218.png" alt="ANPR Central Monitoring Dashboard" />
+              <div class="gallery-hover-bar">
+                <span id="caption-ANPR_central_monitoring">Central Multi-Lane Toll Plaza Live Monitoring Grid</span>
+                <span><i class="fas fa-search-plus"></i> View</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs-row">
+              <button class="thumb-button active" onclick="switchGalleryThumb('ANPR_central_monitoring', 0, 'assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145218.png', 'Central Multi-Lane Toll Plaza Live Monitoring Grid')">
+                <img src="assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145218.png" alt="ANPR Central 1" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ANPR_central_monitoring', 1, 'assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145232.png', 'Lane-Wise ANPR Heartbeat & Real-Time Diagnostics')">
+                <img src="assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145232.png" alt="ANPR Central 2" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ANPR_central_monitoring', 2, 'assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145242.png', 'High-Concurrency Transaction Log & Alarm Triage')">
+                <img src="assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145242.png" alt="ANPR Central 3" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ANPR_central_monitoring', 3, 'assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145259.png', 'Plaza-Wide Device Health & Status Matrix')">
+                <img src="assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145259.png" alt="ANPR Central 4" />
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: Vehicle Re-ID -->
+        <article class="project-card track-python" data-category="python">
+          <div class="project-body">
+            <div>
+              <div class="project-topbar">
+                <span class="project-category-tag tag-python">Deep Learning · OSNet · FAISS Vector DB</span>
+              </div>
+              <h3 class="project-title">Vehicle Re-Identification & Visual Search Engine</h3>
+              <p class="project-lead">
+                Deep metric learning pipeline matching vehicle entry and exit records across non-overlapping highway cameras when license plates are obscured, missing, or unreadable.
+              </p>
+              <ul class="project-points">
+                <li><strong>512-D Visual Feature Extraction:</strong> Deployed an OSNet (IBN 1.0x) deep Re-ID model producing visual embeddings, quantized with OpenVINO FP16 for real-time CPU inference.</li>
+                <li><strong>Time-Bucketed Vector Search:</strong> Built 4-hour temporal FAISS vector indices with cosine similarity search, matching vehicle records across 1,000+ daily transits in under 45ms.</li>
+                <li><strong>Multi-Modal Re-Ranking:</strong> Combined plate OCR, vehicle color histograms, and windshield cues (FASTag placement, stickers) to achieve <strong>92% top-1 match accuracy</strong>, reducing manual audit reviews by 80%.</li>
+                <li><strong>Microservice Architecture:</strong> Packaged the pipeline as a FastAPI microservice with automated memory cleanup for sliding time windows.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-pill-row">
+                <span class="tech-pill">Python 3.11</span>
+                <span class="tech-pill">PyTorch</span>
+                <span class="tech-pill">OSNet Re-ID</span>
+                <span class="tech-pill">FAISS Vector DB</span>
+                <span class="tech-pill">OpenVINO FP16</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">OpenCV</span>
+              </div>
+              <div class="project-action-row">
+                <button class="btn btn-sm btn-ghost" onclick="openLightbox('vehicle_reid', 0)">
+                  <i class="fas fa-expand"></i> Inspect Screenshots (3)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Pane -->
+          <div class="project-gallery-pane" data-project="vehicle_reid">
+            <div class="gallery-preview-box" onclick="openLightbox('vehicle_reid', 0)">
+              <img id="main-view-vehicle_reid" class="gallery-preview-img" src="assets/vehicle_reid/Screenshot 2026-08-25 122941.png" alt="Vehicle Re-ID Search UI" />
+              <div class="gallery-hover-bar">
+                <span id="caption-vehicle_reid">Deep Feature Extraction & Visual Query UI</span>
+                <span><i class="fas fa-search-plus"></i> View</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs-row">
+              <button class="thumb-button active" onclick="switchGalleryThumb('vehicle_reid', 0, 'assets/vehicle_reid/Screenshot 2026-08-25 122941.png', 'Deep Feature Extraction & Visual Query UI')">
+                <img src="assets/vehicle_reid/Screenshot 2026-08-25 122941.png" alt="Re-ID 1" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('vehicle_reid', 1, 'assets/vehicle_reid/Screenshot 2026-08-25 122958.png', 'FAISS Similarity Candidates & Similarity Ranking')">
+                <img src="assets/vehicle_reid/Screenshot 2026-08-25 122958.png" alt="Re-ID 2" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('vehicle_reid', 2, 'assets/vehicle_reid/Screenshot 2026-08-25 123017.png', 'Multi-Camera Entry-Exit Match Validation')">
+                <img src="assets/vehicle_reid/Screenshot 2026-08-25 123017.png" alt="Re-ID 3" />
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: NEXTGEN -->
+        <article class="project-card track-dotnet" data-category="dotnet">
+          <div class="project-body">
+            <div>
+              <div class="project-topbar">
+                <span class="project-category-tag tag-dotnet">.NET Framework MVC · SOA · Windows Services · RDLC</span>
+              </div>
+              <h3 class="project-title">NEXTGEN – Highway ATMS & Device Management Platform</h3>
+              <p class="project-lead">
+                Centralized highway management console unifying standard ATMS field devices into a single control-room web application.
+              </p>
+              <ul class="project-points">
+                <li><strong>Service-Oriented Architecture (SOA):</strong> Built background Windows Services that continuously communicate with and ingest telemetry from ATMS devices (VMS, ATCC sensors, emergency call boxes, weather sensors, CCTV).</li>
+                <li><strong>Live Device Status:</strong> Created a centralized web interface displaying real-time equipment heartbeat status, network diagnostics, and automated fault alerts.</li>
+                <li><strong>RDLC Reporting:</strong> Built tabular and graphical RDLC reports for traffic volume trends, equipment uptime SLA tracking, and operator shift audits.</li>
+                <li><strong>Interactive GIS Mapping:</strong> Integrated Leaflet.js corridor maps with clickable device pins and direct Variable Message Sign (VMS) message broadcast controls.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-pill-row">
+                <span class="tech-pill">C# .NET Framework MVC</span>
+                <span class="tech-pill">Service-Oriented Architecture (SOA)</span>
+                <span class="tech-pill">Windows Services</span>
+                <span class="tech-pill">RDLC Reports</span>
+                <span class="tech-pill">PostgreSQL / MSSQL</span>
+                <span class="tech-pill">Leaflet.js GIS</span>
+              </div>
+              <div class="project-action-row">
+                <button class="btn btn-sm btn-ghost" onclick="openLightbox('NEXTGEN', 0)">
+                  <i class="fas fa-expand"></i> Inspect Screenshots (7)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Pane -->
+          <div class="project-gallery-pane" data-project="NEXTGEN">
+            <div class="gallery-preview-box" onclick="openLightbox('NEXTGEN', 0)">
+              <img id="main-view-NEXTGEN" class="gallery-preview-img" src="assets/NEXTGEN/dashboard.jpg" alt="NEXTGEN Dashboard" />
+              <div class="gallery-hover-bar">
+                <span id="caption-NEXTGEN">NEXTGEN Consolidated ATMS Operations Dashboard</span>
+                <span><i class="fas fa-search-plus"></i> View</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs-row">
+              <button class="thumb-button active" onclick="switchGalleryThumb('NEXTGEN', 0, 'assets/NEXTGEN/dashboard.jpg', 'NEXTGEN Consolidated ATMS Operations Dashboard')">
+                <img src="assets/NEXTGEN/dashboard.jpg" alt="NEXTGEN 1" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('NEXTGEN', 1, 'assets/NEXTGEN/gis-1.jpg', 'Geospatial GIS Map with Real-Time Highway Sensors')">
+                <img src="assets/NEXTGEN/gis-1.jpg" alt="NEXTGEN 2" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('NEXTGEN', 2, 'assets/NEXTGEN/cam-view.jpg', 'Multi-Stream Highway Camera Matrix Wall')">
+                <img src="assets/NEXTGEN/cam-view.jpg" alt="NEXTGEN 3" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('NEXTGEN', 3, 'assets/NEXTGEN/vms.jpg', 'Variable Message Sign (VMS) Live Controller')">
+                <img src="assets/NEXTGEN/vms.jpg" alt="NEXTGEN 4" />
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: Video Management System (VMS) -->
+        <article class="project-card track-dotnet" data-category="dotnet">
+          <div class="project-body">
+            <div>
+              <div class="project-topbar">
+                <span class="project-category-tag tag-dotnet">Full ONVIF · PTZ Camera Control · MediaMTX · WebRTC</span>
+              </div>
+              <h3 class="project-title">Video Management System (VMS) & PTZ Stream Engine</h3>
+              <p class="project-lead">
+                Surveillance and camera management platform with real-time PTZ control, sub-200ms browser video streaming, and synchronized NVR playback.
+              </p>
+              <ul class="project-points">
+                <li><strong>Full ONVIF Protocol Support:</strong> Implemented ONVIF Profile S/G standards with automated WS-Discovery camera probing, RTSP media profile negotiation, and video configuration.</li>
+                <li><strong>PTZ Camera Control:</strong> Added continuous and step-by-step PTZ controls, zoom controls, preset position recall, and camera tour scheduling directly in the browser.</li>
+                <li><strong>Sub-200ms Video with WebRTC:</strong> Used MediaMTX with WHEP (WebRTC) to deliver RTSP camera feeds to HTML5 video players in under 200ms, eliminating standard 3-second RTSP buffer delays.</li>
+                <li><strong>Multi-Camera Timeline Playback:</strong> Built a synchronized timeline scrubber for operators to review and export historical footage from multiple NVR channels simultaneously.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-pill-row">
+                <span class="tech-pill">ASP.NET Core</span>
+                <span class="tech-pill">Full ONVIF Protocol</span>
+                <span class="tech-pill">PTZ Camera Control</span>
+                <span class="tech-pill">MediaMTX</span>
+                <span class="tech-pill">WebRTC / WHEP</span>
+                <span class="tech-pill">RTSP Protocol</span>
+                <span class="tech-pill">NVR Playback</span>
+              </div>
+              <div class="project-action-row">
+                <button class="btn btn-sm btn-ghost" onclick="openLightbox('Video_management', 0)">
+                  <i class="fas fa-expand"></i> Inspect Screenshots (7)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Pane -->
+          <div class="project-gallery-pane" data-project="Video_management">
+            <div class="gallery-preview-box" onclick="openLightbox('Video_management', 0)">
+              <img id="main-view-Video_management" class="gallery-preview-img" src="assets/Video_management/VMS_playback.png" alt="VMS Playback Console" />
+              <div class="gallery-hover-bar">
+                <span id="caption-Video_management">Multi-Camera Synchronized Timeline Playback</span>
+                <span><i class="fas fa-search-plus"></i> View</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs-row">
+              <button class="thumb-button active" onclick="switchGalleryThumb('Video_management', 0, 'assets/Video_management/VMS_playback.png', 'Multi-Camera Synchronized Timeline Playback')">
+                <img src="assets/Video_management/VMS_playback.png" alt="VMS 1" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('Video_management', 1, 'assets/Video_management/VMS_device.png', 'Device Discovery & RTSP Stream Configuration')">
+                <img src="assets/Video_management/VMS_device.png" alt="VMS 2" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('Video_management', 2, 'assets/Video_management/Screenshot 2026-08-25 124048.png', 'Live Video Wall Stream Matrix')">
+                <img src="assets/Video_management/Screenshot 2026-08-25 124048.png" alt="VMS 3" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('Video_management', 3, 'assets/Video_management/VMS_config.png', 'NVR Storage & Stream Retention Engine')">
+                <img src="assets/Video_management/VMS_config.png" alt="VMS 4" />
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 6: Edge ANPR & ATCC -->
+        <article class="project-card track-python" data-category="python">
+          <div class="project-body">
+            <div>
+              <div class="project-topbar">
+                <span class="project-category-tag tag-python">YOLOv8 · PaddleOCR · Raspberry Pi 5 · Live Cloud Demo</span>
+                <a href="https://huggingface.co/spaces/parthpatil0024/ANPR" target="_blank" class="btn btn-sm btn-amber" title="Launch Interactive ANPR Demo on Hugging Face Spaces">
+                  <span class="status-dot"></span> Live Hugging Face Demo <i class="fas fa-arrow-up-right-from-square" style="font-size:0.65rem;"></i>
+                </a>
+              </div>
+              <h3 class="project-title">Edge-Based ANPR & Automatic Traffic Classifier (ATCC)</h3>
+              <p class="project-lead">
+                Embedded edge AI system on Raspberry Pi 5 running vehicle classification, traffic counting, and license plate recognition on RTSP video feeds.
+              </p>
+              <ul class="project-points">
+                <li><strong>Edge Pipeline Optimization:</strong> Quantized YOLO detection and PaddleOCR recognition models with NCNN/OpenVINO, reducing memory footprint by 70% while maintaining a steady 15+ FPS on Raspberry Pi 5.</li>
+                <li><strong>Indian Number Plate Specialization:</strong> Fine-tuned PaddleOCR on 5,000+ localized plates with custom character dictionaries, achieving 98% accuracy on high-speed and night captures.</li>
+                <li><strong>Vehicle Tracking & Flow Analysis:</strong> Integrated ByteTrack for vehicle trajectory tracking, 4-class classification (Car/Bus/Truck/2W), and wrong-way movement detection.</li>
+                <li><strong>Interactive Cloud Demo:</strong> Deployed an interactive demo on Hugging Face Spaces for real-time testing on user-uploaded vehicle images.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-pill-row">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">YOLOv8</span>
+                <span class="tech-pill">PaddleOCR</span>
+                <span class="tech-pill">NCNN / OpenVINO</span>
+                <span class="tech-pill">ByteTrack</span>
+                <span class="tech-pill">Raspberry Pi 5</span>
+                <span class="tech-pill">Hugging Face Spaces</span>
+              </div>
+              <div class="project-action-row">
+                <a href="https://huggingface.co/spaces/parthpatil0024/ANPR" target="_blank" class="btn btn-sm btn-emerald" title="Test Live ANPR Model on Hugging Face">
+                  <i class="fas fa-play"></i> Launch Live Model Demo <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+                <button class="btn btn-sm btn-ghost" onclick="openLightbox('ATCC', 0)">
+                  <i class="fas fa-expand"></i> Inspect Screenshots (2)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Pane -->
+          <div class="project-gallery-pane" data-project="ATCC">
+            <div class="gallery-preview-box" onclick="openLightbox('ATCC', 0)">
+              <img id="main-view-ATCC" class="gallery-preview-img" src="assets/ATCC/Screenshot 2026-08-25 124150.png" alt="ATCC Classification Dashboard" />
+              <div class="gallery-hover-bar">
+                <span id="caption-ATCC">Automatic Traffic Classification & Flow Analytics</span>
+                <span><i class="fas fa-search-plus"></i> View</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs-row">
+              <button class="thumb-button active" onclick="switchGalleryThumb('ATCC', 0, 'assets/ATCC/Screenshot 2026-08-25 124150.png', 'Automatic Traffic Classification & Flow Analytics')">
+                <img src="assets/ATCC/Screenshot 2026-08-25 124150.png" alt="ATCC 1" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ATCC', 1, 'assets/ATCC/Screenshot 2026-08-25 124201.png', 'Real-Time Lane Counting & Velocity Estimation')">
+                <img src="assets/ATCC/Screenshot 2026-08-25 124201.png" alt="ATCC 2" />
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 7: ATMS PWA -->
+        <article class="project-card track-python" data-category="python">
+          <div class="project-body">
+            <div>
+              <div class="project-topbar">
+                <span class="project-category-tag tag-python">Progressive Web App · Field Operations · Offline Cache</span>
+              </div>
+              <h3 class="project-title">ATMS PWA & Mobile Toll Field Operator Console</h3>
+              <p class="project-lead">
+                Mobile-friendly progressive web app for field engineers and supervisors to run lane diagnostics and manage incidents on site.
+              </p>
+              <ul class="project-points">
+                <li><strong>Field Tooling & Diagnostics:</strong> Built a responsive PWA allowing technicians to trigger barrier gate relays, check lane device heartbeats, and view live camera snaps from tablets and phones.</li>
+                <li><strong>Offline Support:</strong> Implemented service worker caching so field operators can log audits and view cached device specs even during cellular drops.</li>
+                <li><strong>Incident Alerts:</strong> Added push notifications for vehicle breakdown alerts and high-priority traffic incidents.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="tech-pill-row">
+                <span class="tech-pill">PWA / Service Workers</span>
+                <span class="tech-pill">JavaScript ES6+</span>
+                <span class="tech-pill">.NET Core Web API</span>
+                <span class="tech-pill">Bootstrap 5</span>
+                <span class="tech-pill">PostgreSQL</span>
+              </div>
+              <div class="project-action-row">
+                <button class="btn btn-sm btn-ghost" onclick="openLightbox('ATMS_PWA', 0)">
+                  <i class="fas fa-expand"></i> Inspect Screenshots (4)
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Pane -->
+          <div class="project-gallery-pane" data-project="ATMS_PWA">
+            <div class="gallery-preview-box" onclick="openLightbox('ATMS_PWA', 0)">
+              <img id="main-view-ATMS_PWA" class="gallery-preview-img" src="assets/ATMS_PWA/Screenshot 2026-08-25 124532.png" alt="ATMS PWA Mobile Dashboard" />
+              <div class="gallery-hover-bar">
+                <span id="caption-ATMS_PWA">Mobile Incident Dispatch & Field Status</span>
+                <span><i class="fas fa-search-plus"></i> View</span>
+              </div>
+            </div>
+            <div class="gallery-thumbs-row">
+              <button class="thumb-button active" onclick="switchGalleryThumb('ATMS_PWA', 0, 'assets/ATMS_PWA/Screenshot 2026-08-25 124532.png', 'Mobile Incident Dispatch & Field Status')">
+                <img src="assets/ATMS_PWA/Screenshot 2026-08-25 124532.png" alt="PWA 1" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ATMS_PWA', 1, 'assets/ATMS_PWA/Screenshot 2026-08-25 124557.png', 'Toll Plaza Live Diagnostic Console')">
+                <img src="assets/ATMS_PWA/Screenshot 2026-08-25 124557.png" alt="PWA 2" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ATMS_PWA', 2, 'assets/ATMS_PWA/Screenshot 2026-08-25 124618.png', 'Real-Time Lane Telemetry & Alarms')">
+                <img src="assets/ATMS_PWA/Screenshot 2026-08-25 124618.png" alt="PWA 3" />
+              </button>
+              <button class="thumb-button" onclick="switchGalleryThumb('ATMS_PWA', 3, 'assets/ATMS_PWA/Screenshot 2026-08-25 124628.png', 'Field Operator Audit & Shift Reports')">
+                <img src="assets/ATMS_PWA/Screenshot 2026-08-25 124628.png" alt="PWA 4" />
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SYSTEM ARCHITECTURE DATA FLOW ───────────────────────── -->
+  <section id="architecture">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">02 — System Architecture</p>
+        <h2 class="section-title">Edge-to-Central Data Flow</h2>
+        <p class="section-desc">
+          How roadside sensors, edge AI inference, and centralized .NET services connect together in production.
+        </p>
       </div>
 
-      <div class="pcard reveal reveal-d4">
-        <p class="pcard-title">Book Recommendation · Collaborative Filtering</p>
-        <ul>
-          <li>Content-based + collaborative filtering on 270,000+ Goodreads ratings</li>
-          <li>Cosine similarity for user-based recommendations</li>
-          <li>Flask web app with search and personalized suggestions</li>
-          <li>78% recommendation precision on test set</li>
-        </ul>
-        <div class="tech-chips" style="margin-top:1.5rem">
-          <span class="chip">Python</span><span class="chip">Scikit-learn</span><span class="chip">Pandas</span>
-          <span class="chip">Flask</span><span class="chip">Collaborative Filtering</span>
+      <div class="arch-grid">
+        <div class="arch-card">
+          <span class="arch-step-badge">LAYER 01</span>
+          <h3 class="arch-card-title">Sensors & Hardware IO</h3>
+          <p class="arch-card-desc">
+            RTSP cameras, ground loop detectors, thermal slip printers, and barrier gate IO relays capturing lane events in real time.
+          </p>
+        </div>
+
+        <div class="arch-card">
+          <span class="arch-step-badge">LAYER 02</span>
+          <h3 class="arch-card-title">Edge Vision Pipeline</h3>
+          <p class="arch-card-desc">
+            YOLOv8 vehicle detection and fine-tuned PaddleOCR running on NCNN/OpenVINO runtimes with ByteTrack tracking (&lt;65ms per frame).
+          </p>
+        </div>
+
+        <div class="arch-card">
+          <span class="arch-step-badge">LAYER 03</span>
+          <h3 class="arch-card-title">Backend Services & SignalR</h3>
+          <p class="arch-card-desc">
+            ASP.NET Core Web APIs evaluating dynamic tariff rules (&lt;5ms), pushing live telemetry over SignalR WebSockets, and triggering barrier pulses.
+          </p>
+        </div>
+
+        <div class="arch-card">
+          <span class="arch-step-badge">LAYER 04</span>
+          <h3 class="arch-card-title">Storage & Vector Search</h3>
+          <p class="arch-card-desc">
+            PostgreSQL databases for transaction records and audit logs + FAISS 512-D vector store for cross-camera vehicle Re-ID.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── PATENTS ─────────────────────────────────────────── -->
-  <section id="patents">
-    <p class="label reveal">05 &mdash; Patents</p>
-    <h2 class="section-title reveal">Registered<br>innovations.</h2>
-    <div class="two-col">
-      <div class="simple-card reveal reveal-d1">
-        <h3>RT-Sanitizer</h3>
-        <p>Patent No: 201911038954</p>
-        <p>CBR No: 31432</p>
+  <!-- ── TECHNICAL SKILLS SECTION ───────────────────────────── -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">03 — Technical Skills</p>
+        <h2 class="section-title">Technologies & Frameworks</h2>
+        <p class="section-desc">
+          Languages, frameworks, databases, and embedded tools I work with across production projects.
+        </p>
       </div>
-      <div class="simple-card reveal reveal-d2">
-        <h3>I-Adapter</h3>
-        <p>Patent No: 201911040245</p>
-        <p>CBR No: 32337</p>
+
+      <div class="skills-grid">
+        <div class="skill-block">
+          <h3 class="skill-block-title"><i class="fas fa-server" style="color:var(--accent-blue)"></i> .NET & Backend</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>C# (.NET 8, .NET Core)</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>ASP.NET Core MVC / API</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>Windows Services & Daemons</span> <span class="skill-tag">Expert</span></li>
+            <li class="skill-item"><span>SignalR WebSockets</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>EF Core / ADO.NET</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>FastReport / RDLC</span> <span class="skill-tag">Proficient</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h3 class="skill-block-title"><i class="fab fa-python" style="color:var(--accent-emerald)"></i> Python & Vision AI</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Python 3.11 / PyTorch</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>YOLOv8 / Detection</span> <span class="skill-tag">Expert</span></li>
+            <li class="skill-item"><span>PaddleOCR (Fine-Tuned)</span> <span class="skill-tag">Expert</span></li>
+            <li class="skill-item"><span>OSNet Vehicle Re-ID</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>FAISS Vector Search</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>OpenVINO & NCNN</span> <span class="skill-tag">Advanced</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h3 class="skill-block-title"><i class="fas fa-database" style="color:var(--accent-amber)"></i> Databases & Video</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>PostgreSQL 16 (Npgsql)</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>Microsoft SQL Server</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>Query & Stored Procs</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>MediaMTX / WebRTC (WHEP)</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>Full ONVIF & PTZ Control</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>FastAPI Microservices</span> <span class="skill-tag">Advanced</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <h3 class="skill-block-title"><i class="fas fa-microchip" style="color:#a78bfa"></i> Frontend & Edge</h3>
+          <ul class="skill-list">
+            <li class="skill-item"><span>Angular & TypeScript</span> <span class="skill-tag">Proficient</span></li>
+            <li class="skill-item"><span>JavaScript ES6+ / HTML5</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>Leaflet.js GIS Mapping</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>Raspberry Pi 5 / Linux</span> <span class="skill-tag">Advanced</span></li>
+            <li class="skill-item"><span>ESC/POS & Barrier Relays</span> <span class="skill-tag">Expert</span></li>
+            <li class="skill-item"><span>Progressive Web Apps</span> <span class="skill-tag">Advanced</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── EDUCATION ───────────────────────────────────────── -->
-  <section id="education">
-    <p class="label reveal">06 &mdash; Education</p>
-    <h2 class="section-title reveal">Foundations.</h2>
-    <div class="edu-timeline">
-      <div class="edu-item reveal">
-        <div class="edu-year">2026</div>
-        <div class="edu-body">
-          <h3>MTech · Applied Artificial Intelligence</h3>
-          <h4>Visvesvaraya National Institute of Technology, Nagpur</h4>
-          <p>Expected</p>
-        </div>
+  <!-- ── CREDENTIALS SECTION ─────────────────────────────────── -->
+  <section id="creds">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-tag">04 — Credentials</p>
+        <h2 class="section-title">Patents, Certifications & Education</h2>
       </div>
-      <div class="edu-item reveal reveal-d1">
-        <div class="edu-year">2022</div>
-        <div class="edu-body">
-          <h3>PG-DAC · Advanced Computing</h3>
-          <h4>CDAC, Pune</h4>
-          <p>CGPA 7.5 / 10</p>
+
+      <div class="creds-grid">
+        <!-- Patents & Certs -->
+        <div>
+          <h3 class="cred-group-title"><i class="fas fa-certificate" style="color:var(--accent-amber)"></i> Registered Patents & Certification</h3>
+
+          <div class="cred-card">
+            <div class="cred-issuer">Indian Patent Office</div>
+            <h4 class="cred-name">RT-Sanitizer (Automated Sanitization Device)</h4>
+            <p class="cred-meta">Patent Application No: <strong>201911038954</strong> · CBR No: <strong>31432</strong></p>
+          </div>
+
+          <div class="cred-card">
+            <div class="cred-issuer">Indian Patent Office</div>
+            <h4 class="cred-name">I-Adapter (Intelligent Adaptive Connector)</h4>
+            <p class="cred-meta">Patent Application No: <strong>201911040245</strong> · CBR No: <strong>32337</strong></p>
+          </div>
+
+          <a href="https://learn.microsoft.com/api/credentials/share/en-us/ParthPatil-4071/D2DC40631238BFD?sharingId=2D30BF5EE74C31D5" target="_blank" class="cred-card cert-link-card" title="Verify Microsoft Certification">
+            <img src="assets/microsoft-certified-fundamentals-badge.svg" alt="Microsoft Badge" class="cert-icon-img" />
+            <div>
+              <div class="cred-issuer" style="color:var(--accent-blue)">Official Microsoft Certification</div>
+              <h4 class="cred-name" style="margin-bottom:0.15rem">Azure Fundamentals (AZ-900)</h4>
+              <p class="cred-meta" style="color:var(--accent-blue); text-decoration:underline;">Click to Verify Credential <i class="fas fa-arrow-up-right-from-square"></i></p>
+            </div>
+          </a>
         </div>
-      </div>
-      <div class="edu-item reveal reveal-d2">
-        <div class="edu-year">2021</div>
-        <div class="edu-body">
-          <h3>BE · Computer Science</h3>
-          <h4>PVPIT, Pune</h4>
-          <p>CGPA 7.44 / 10</p>
+
+        <!-- Academic Background -->
+        <div>
+          <h3 class="cred-group-title"><i class="fas fa-graduation-cap" style="color:var(--accent-blue)"></i> Academic Background</h3>
+
+          <div class="cred-card">
+            <div class="cred-issuer" style="color:var(--accent-blue)">Post Graduate · Completed</div>
+            <h4 class="cred-name">M.Tech · Applied Artificial Intelligence</h4>
+            <p class="cred-meta">Visvesvaraya National Institute of Technology (VNIT), Nagpur</p>
+          </div>
+
+          <div class="cred-card">
+            <div class="cred-issuer" style="color:var(--accent-emerald)">2022</div>
+            <h4 class="cred-name">PG-DAC · Advanced Computing</h4>
+            <p class="cred-meta">Centre for Development of Advanced Computing (CDAC), Pune · <strong>CGPA: 7.5 / 10</strong></p>
+          </div>
+
+          <div class="cred-card">
+            <div class="cred-issuer" style="color:var(--text-muted)">2021</div>
+            <h4 class="cred-name">B.E. · Computer Science & Engineering</h4>
+            <p class="cred-meta">Padmabhooshan Vasantraodada Patil Institute of Technology (PVPIT), Pune · <strong>CGPA: 7.44 / 10</strong></p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── CERTIFICATIONS ─────────────────────────────────── -->
-  <section id="certifications">
-    <p class="label reveal">07 &mdash; Certifications</p>
-    <h2 class="section-title reveal">Credentials.</h2>
-    <div class="two-col" style="max-width:520px">
-      <a href="https://learn.microsoft.com/api/credentials/share/en-us/ParthPatil-4071/D2DC40631238BFD?sharingId=2D30BF5EE74C31D5"
-         target="_blank" class="cert-link reveal">
-        <div class="simple-card">
-          <h3>Azure Fundamentals</h3>
-          <p>Microsoft · 2026</p>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- ── CONTACT ─────────────────────────────────────────── -->
+  <!-- ── CONTACT SECTION ─────────────────────────────────────── -->
   <section id="contact">
-    <p class="label reveal" style="text-align:center">08 &mdash; Contact</p>
-    <p class="contact-big reveal">Open to new<br>opportunities.</p>
-    <a href="mailto:parthpatil0024@gmail.com" class="contact-email reveal reveal-d1">
-      <i class="fas fa-envelope"></i> parthpatil0024@gmail.com
-    </a>
-    <div class="contact-socials reveal reveal-d2">
-      <a href="https://github.com/Parthpatil0024" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/parth-patil1999/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://leetcode.com/u/parthpatil0024" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+    <div class="container">
+      <div class="contact-wrapper">
+        <div style="text-align:center;">
+          <p class="section-tag" style="justify-content:center">05 — Contact</p>
+          <h2 class="section-title" style="margin-bottom:0.8rem">Let's Connect</h2>
+          <p class="section-desc" style="margin:0 auto;">
+            Have an open role, project inquiry, or want to discuss backend engineering and edge computer vision? Send a message directly below or reach out via email.
+          </p>
+        </div>
+
+        <!-- FormSubmit Contact Form -->
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/24487ec38873e450b8b7c190c65ed608" method="POST">
+          <input type="hidden" name="_subject" value="New Portfolio Message from Parth's Website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style="display:none" />
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="form-name" class="form-label">Your Name</label>
+              <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="form-email" class="form-label">Your Email</label>
+              <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. john@company.com" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="form-topic" class="form-label">Inquiry Type / Role</label>
+            <select id="form-topic" name="topic" class="form-select">
+              <option value="Senior .NET / Backend Developer Role">Senior .NET / Backend Developer Role</option>
+              <option value="Computer Vision / Edge AI Role">Computer Vision / Edge AI Role</option>
+              <option value="Full-Stack / Systems Engineering">Full-Stack / Systems Engineering</option>
+              <option value="General Collaboration / Networking">General Collaboration / Networking</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="form-message" class="form-label">Your Message</label>
+            <textarea id="form-message" name="message" class="form-textarea" placeholder="Tell me about the role, project requirements, or team..." required></textarea>
+          </div>
+
+          <button type="submit" class="form-submit-btn" id="form-submit-btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+
+        <div class="contact-divider">
+          <span>OR REACH OUT DIRECTLY</span>
+        </div>
+
+        <div style="text-align:center;">
+          <button class="direct-email-btn" onclick="copyEmail()" title="Click to copy email address">
+            <i class="fas fa-envelope" style="color:var(--accent-blue)"></i> parthpatil0024@gmail.com <i class="fas fa-copy" style="font-size:0.85rem; opacity:0.7"></i>
+          </button>
+        </div>
+
+        <div class="contact-pills-row">
+          <a href="assets/Parth_Patil_Resume_DotNet.docx" download class="btn btn-sm btn-blue" title="Download .NET Core Resume">
+            <i class="fas fa-file-code"></i> Download .NET Resume
+          </a>
+          <a href="assets/Parth_Patil_Resume_Python.docx" download class="btn btn-sm btn-emerald" title="Download Python AI Resume">
+            <i class="fab fa-python"></i> Download Python / AI Resume
+          </a>
+          <a href="https://www.linkedin.com/in/parth-patil1999/" target="_blank" class="btn btn-sm btn-ghost">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/Parthpatil0024" target="_blank" class="btn btn-sm btn-ghost">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- ── LIGHTBOX MODAL ──────────────────────────────────────── -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <div class="lightbox-header">
+      <div>
+        <h3 class="lightbox-title" id="lightbox-project-title">Project Screenshot</h3>
+        <span class="lightbox-counter" id="lightbox-counter">Image 1 of 4</span>
+      </div>
+      <button class="lightbox-close-btn" onclick="closeLightbox()" title="Close Viewer (Esc)">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="lightbox-stage">
+      <button class="lightbox-nav-btn lightbox-prev" onclick="prevLightboxImg()" title="Previous Image (←)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <img id="lightbox-active-img" class="lightbox-img-el" src="" alt="Screenshot" />
+      <button class="lightbox-nav-btn lightbox-next" onclick="nextLightboxImg()" title="Next Image (→)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="lightbox-caption-bar" id="lightbox-caption">
+      Image Caption Description
+    </div>
+  </div>
+
+  <!-- Toast Notification Popup -->
+  <div class="toast-popup" id="toast-popup">
+    <i class="fas fa-check-circle" style="color:var(--accent-emerald)"></i>
+    <span id="toast-message">Email copied to clipboard!</span>
+  </div>
+
+  <!-- ── FOOTER ──────────────────────────────────────────────── -->
   <footer>
-    <p>&copy; 2026 Parth Patil &nbsp;·&nbsp; Crafted with intention</p>
+    <div class="container">
+      <p>&copy; 2026 Parth Patil · Built with clean HTML5, CSS3 & JavaScript · Hosted on GitHub Pages</p>
+    </div>
   </footer>
 
+  <!-- ── JAVASCRIPT LOGIC & INTERACTIONS ────────────────────── -->
   <script>
-  window.addEventListener('load', () => {
-
-    /* ── CURSOR ─────────────────────────────────────────── */
-    const dot  = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function tickCursor() {
-      dot.style.left  = mx + 'px';
-      dot.style.top   = my + 'px';
-      rx += (mx - rx) * .12;
-      ry += (my - ry) * .12;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-      requestAnimationFrame(tickCursor);
-    }
-    tickCursor();
-
-    /* ── NAVBAR SCROLL ──────────────────────────────────── */
-    const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    /* ── SCROLL REVEAL ──────────────────────────────────── */
-    const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => obs.observe(el));
-
-    /* ── THREE.JS — Organic Spore Field ─────────────────── */
-    const scene    = new THREE.Scene();
-    const camera   = new THREE.PerspectiveCamera(60, innerWidth/innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('#bg'), antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-    renderer.setSize(innerWidth, innerHeight);
-    camera.position.z = 40;
-
-    // Organic particle field — soft floating spores
-    const COUNT = 1800;
-    const geo   = new THREE.BufferGeometry();
-    const pos   = new Float32Array(COUNT * 3);
-    const sizes = new Float32Array(COUNT);
-    const phases= new Float32Array(COUNT);
-
-    for (let i = 0; i < COUNT; i++) {
-      // Cluster around organic cloud shapes
-      const theta = Math.random() * Math.PI * 2;
-      const phi   = Math.acos(2 * Math.random() - 1);
-      const r     = 20 + Math.random() * 25;
-      pos[i*3]   = r * Math.sin(phi) * Math.cos(theta);
-      pos[i*3+1] = r * Math.sin(phi) * Math.sin(theta) * 0.5;
-      pos[i*3+2] = r * Math.cos(phi);
-      sizes[i]   = Math.random() * 2 + 0.5;
-      phases[i]  = Math.random() * Math.PI * 2;
-    }
-    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-
-    const mat = new THREE.PointsMaterial({
-      size: 0.12,
-      color: new THREE.Color('#6b8f71'),
-      transparent: true,
-      opacity: 0.5,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    });
-
-    const particles = new THREE.Points(geo, mat);
-    scene.add(particles);
-
-    // Slow ambient light spheres (invisible, affect color)
-    const ambientBloom = [];
-    const bloomColors = ['#2d4a32', '#c8853a', '#1a2e1f'];
-    for (let i = 0; i < 3; i++) {
-      const light = new THREE.PointLight(bloomColors[i], 0.8, 60);
-      light.position.set(
-        (Math.random()-0.5)*30,
-        (Math.random()-0.5)*20,
-        (Math.random()-0.5)*20
-      );
-      scene.add(light);
-      ambientBloom.push({ light, ox: light.position.x, oy: light.position.y, phase: Math.random()*Math.PI*2 });
-    }
-
-    // Mouse parallax
-    let mx3 = 0, my3 = 0;
-    document.addEventListener('mousemove', e => {
-      mx3 = (e.clientX / innerWidth  - 0.5) * 2;
-      my3 = (e.clientY / innerHeight - 0.5) * 2;
-    });
-
-    let t = 0;
-    function animate() {
-      requestAnimationFrame(animate);
-      t += 0.004;
-
-      // Slowly rotate + breathe the particle cloud
-      particles.rotation.y = t * 0.04 + mx3 * 0.08;
-      particles.rotation.x = t * 0.015 + my3 * 0.04;
-
-      // Undulate individual particle positions
-      const pa = geo.attributes.position.array;
-      for (let i = 0; i < COUNT; i++) {
-        pa[i*3+1] += Math.sin(t + phases[i]) * 0.003;
+    /* ── PROJECT GALLERIES DATA ────────────────────────────── */
+    const galleryData = {
+      ParkAOT: {
+        title: "ParkAOT (ParkOS) – Smart Parking & Edge Automation",
+        images: [
+          { src: "assets/ParkAOT/Screenshot 2026-08-25 122503.png", caption: "Operator POS · Ingress & Egress Lane Multi-View Dashboard" },
+          { src: "assets/ParkAOT/Screenshot 2026-08-25 122523.png", caption: "Entry Lane ANPR OCR Verification & Ticket Emission" },
+          { src: "assets/ParkAOT/Screenshot 2026-08-25 122539.png", caption: "Exit Lane Automated Tariff Calculation & Settlement" },
+          { src: "assets/ParkAOT/Screenshot 2026-08-25 122558.png", caption: "Thermal Slip Barcode Printing & FastReport Preview" },
+          { src: "assets/ParkAOT/Screenshot 2026-08-25 122610.png", caption: "Daily Collection & Cash Reconciliation Summary" },
+          { src: "assets/ParkAOT/Screenshot 2026-08-25 122623.png", caption: "Shift-Wise Cash Audit & Revenue Analysis Report" },
+          { src: "assets/ParkAOT/Screenshot 2026-08-25 122645.png", caption: "Hardware Health & Device Status Hub (SignalR WebSockets)" }
+        ]
+      },
+      ANPR_central_monitoring: {
+        title: "ANPR Multi-Lane Central Monitoring & Plaza Telemetry Dashboard",
+        images: [
+          { src: "assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145218.png", caption: "Centralized Multi-Lane Toll Plaza Live Monitoring Grid" },
+          { src: "assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145232.png", caption: "Lane-Wise ANPR Heartbeat & Real-Time Diagnostics" },
+          { src: "assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145242.png", caption: "High-Concurrency Transaction Log & Alarm Triage" },
+          { src: "assets/ANPR_Central_monitoring/Screenshot 2026-08-25 145259.png", caption: "Plaza-Wide Device Health & Status Matrix" }
+        ]
+      },
+      vehicle_reid: {
+        title: "Vehicle Re-Identification & Visual Search Engine",
+        images: [
+          { src: "assets/vehicle_reid/Screenshot 2026-08-25 122941.png", caption: "Deep 512-D Feature Extraction & Visual Query UI" },
+          { src: "assets/vehicle_reid/Screenshot 2026-08-25 122958.png", caption: "FAISS Similarity Candidates & Multi-Modal Similarity Ranking" },
+          { src: "assets/vehicle_reid/Screenshot 2026-08-25 123017.png", caption: "Multi-Camera Cross-Corridor Vehicle Match Validation" }
+        ]
+      },
+      NEXTGEN: {
+        title: "NEXTGEN – Consolidated Highway ATMS & Device Management Platform",
+        images: [
+          { src: "assets/NEXTGEN/dashboard.jpg", caption: "Central Control Room ATMS Operations Dashboard" },
+          { src: "assets/NEXTGEN/gis-1.jpg", caption: "Geospatial GIS Map with Real-Time Highway Sensor Pins" },
+          { src: "assets/NEXTGEN/gis-2.jpg", caption: "Corridor Telemetry & Device Topology Mapping" },
+          { src: "assets/NEXTGEN/cam-view.jpg", caption: "Multi-Stream Highway Camera Matrix Wall" },
+          { src: "assets/NEXTGEN/vms.jpg", caption: "Variable Message Sign (VMS) Live Controller" },
+          { src: "assets/NEXTGEN/nms.jpg", caption: "Network Management & Device Heartbeat Diagnostics" },
+          { src: "assets/NEXTGEN/modal.jpg", caption: "Incident Alert Broadcast & Emergency Dispatch" }
+        ]
+      },
+      Video_management: {
+        title: "Video Management System (VMS) – Full ONVIF & PTZ Stream Engine",
+        images: [
+          { src: "assets/Video_management/VMS_playback.png", caption: "Multi-Camera Synchronized Timeline Playback Console" },
+          { src: "assets/Video_management/VMS_device.png", caption: "Device Discovery & RTSP Stream Configuration Manager" },
+          { src: "assets/Video_management/VMS_config.png", caption: "NVR Stream Storage & Retention Policy Configuration" },
+          { src: "assets/Video_management/Screenshot 2026-08-25 124048.png", caption: "Live Stream Grid Matrix & View Layouts" },
+          { src: "assets/Video_management/Screenshot 2026-08-25 124103.png", caption: "Camera PTZ & ROI Detection Calibration" },
+          { src: "assets/Video_management/Screenshot 2026-08-25 124112.png", caption: "Video Analytics & Event Logging Stream" },
+          { src: "assets/Video_management/Screenshot 2026-08-25 124123.png", caption: "Disk Storage Quota & Archival Manager" }
+        ]
+      },
+      ATCC: {
+        title: "Edge-Based ANPR & Automatic Traffic Classifier (ATCC)",
+        images: [
+          { src: "assets/ATCC/Screenshot 2026-08-25 124150.png", caption: "Automatic Traffic Classification & Flow Analytics" },
+          { src: "assets/ATCC/Screenshot 2026-08-25 124201.png", caption: "Real-Time Lane Counting & Velocity Estimation" }
+        ]
+      },
+      ATMS_PWA: {
+        title: "ATMS PWA & Mobile Field Operator Console",
+        images: [
+          { src: "assets/ATMS_PWA/Screenshot 2026-08-25 124532.png", caption: "Mobile Incident Dispatch & Field Status Console" },
+          { src: "assets/ATMS_PWA/Screenshot 2026-08-25 124557.png", caption: "Toll Plaza Live Diagnostic & Alarm Monitor" },
+          { src: "assets/ATMS_PWA/Screenshot 2026-08-25 124618.png", caption: "Real-Time Lane Telemetry & Device Heartbeats" },
+          { src: "assets/ATMS_PWA/Screenshot 2026-08-25 124628.png", caption: "Field Operator Audit & Shift Reports Console" }
+        ]
       }
-      geo.attributes.position.needsUpdate = true;
+    };
 
-      // Float the bloom lights
-      ambientBloom.forEach(b => {
-        b.light.position.x = b.ox + Math.sin(t + b.phase) * 8;
-        b.light.position.y = b.oy + Math.cos(t * 0.7 + b.phase) * 6;
-      });
+    /* ── THUMBNAIL SWITCHER ─────────────────────────────────── */
+    function switchGalleryThumb(projectId, index, src, caption) {
+      const mainImg = document.getElementById(`main-view-${projectId}`);
+      const captionEl = document.getElementById(`caption-${projectId}`);
+      if (mainImg) mainImg.src = src;
+      if (captionEl) captionEl.textContent = caption;
 
-      renderer.render(scene, camera);
+      // Update active thumbnail state
+      const container = document.querySelector(`[data-project="${projectId}"]`);
+      if (container) {
+        const thumbBtns = container.querySelectorAll('.thumb-button');
+        thumbBtns.forEach((btn, i) => {
+          btn.classList.toggle('active', i === index);
+        });
+      }
     }
-    animate();
 
-    window.addEventListener('resize', () => {
-      camera.aspect = innerWidth / innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(innerWidth, innerHeight);
+    /* ── LIGHTBOX MODAL LOGIC ───────────────────────────────── */
+    let currentProjectKey = null;
+    let currentImageIndex = 0;
+
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxTitle = document.getElementById('lightbox-project-title');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const lightboxImg = document.getElementById('lightbox-active-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    function openLightbox(projectKey, imageIndex = 0) {
+      if (!galleryData[projectKey]) return;
+      currentProjectKey = projectKey;
+      currentImageIndex = imageIndex;
+      updateLightboxContent();
+      lightboxModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function updateLightboxContent() {
+      const project = galleryData[currentProjectKey];
+      const imgData = project.images[currentImageIndex];
+      lightboxTitle.textContent = project.title;
+      lightboxCounter.textContent = `Image ${currentImageIndex + 1} of ${project.images.length}`;
+      lightboxImg.src = imgData.src;
+      lightboxCaption.textContent = imgData.caption;
+    }
+
+    function prevLightboxImg() {
+      const project = galleryData[currentProjectKey];
+      currentImageIndex = (currentImageIndex - 1 + project.images.length) % project.images.length;
+      updateLightboxContent();
+    }
+
+    function nextLightboxImg() {
+      const project = galleryData[currentProjectKey];
+      currentImageIndex = (currentImageIndex + 1) % project.images.length;
+      updateLightboxContent();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightboxModal.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevLightboxImg();
+      if (e.key === 'ArrowRight') nextLightboxImg();
     });
 
-    /* ── SMOOTH SCROLL ──────────────────────────────────── */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    /* ── RECRUITER TRACK FILTER SWITCHER ────────────────────── */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'grid';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
 
-  });
+    /* ── FORMSUBMIT AJAX HANDLER ────────────────────────────── */
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('form-submit-btn');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const originalBtnHTML = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Sending message...`;
+
+        const formData = new FormData(contactForm);
+        const objectData = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify(objectData)
+          });
+
+          if (response.ok) {
+            showToast("✓ Message sent successfully! I'll reply shortly.");
+            submitBtn.innerHTML = `<i class="fas fa-check"></i> Sent Successfully!`;
+            submitBtn.style.background = `#059669`;
+            submitBtn.style.borderColor = `#10b981`;
+            contactForm.reset();
+
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnHTML;
+              submitBtn.style.background = '';
+              submitBtn.style.borderColor = '';
+            }, 5000);
+          } else {
+            throw new Error('Network error');
+          }
+        } catch (err) {
+          contactForm.submit();
+        }
+      });
+    }
+
+    /* ── EMAIL COPY TO CLIPBOARD WITH TOAST ─────────────────── */
+    function copyEmail() {
+      const email = "parthpatil0024@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        showToast("✓ Copied parthpatil0024@gmail.com to clipboard!");
+      }).catch(() => {
+        window.location.href = `mailto:${email}`;
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-popup');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 3000);
+    }
+
+    /* ── NAVBAR SCROLL SHADOW ───────────────────────────────── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
   </script>
 </body>
 </html>
